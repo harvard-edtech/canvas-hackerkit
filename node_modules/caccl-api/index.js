@@ -1,0 +1,38 @@
+/**
+ * Canvas API Class
+ * @author Gabriel Abrams
+ * @module caccl-canvas-api
+ * @see module: index
+ */
+
+const API = require('./endpoints/API');
+
+/**
+ * Creates a new API object
+ * @author Gabriel Abrams
+ * @param {string} [config.accessToken] - An access token to add to all
+ *   requests. Can be overridden by including `access_token` query/body
+ *   parameter.
+ * @param {string} [config.canvasHost=canvas.instructure.com] - The hostname
+ *   to use when sending requests to the Canvas API. Can be overridden for an
+ *   individual request by including `host` option. If canvasHost is null, no
+ *   hostname is prepended to the request path
+ * @param {string} [config.cacheType] - If 'memory', cache is stored in
+ *   memory. If 'session' and req is included, cache is stored in express
+ *   session. To include a custom cache, include it as config.cache
+ * @param {object} [config.req] - Express request object with req.session
+ *   support. Required if using 'session' cacheType.
+ * @param {object} [config.cache] - Custom cache manager class. Required if
+ *   using 'custom' cacheType.
+ * @param {function} [config.sendRequest] - Function that sends a request to
+ *   the Canvas API. Defaults to HTTPS request sender.
+ * @param {string} [options.apiPathPrefix=''] - The
+ *   prefix to prepend to all endpoint paths
+ * @param {number} [config.defaultNumRetries=3] - Number of times to retry a
+ *   request. Can be overridden for an individual request by including
+ *   numRetries option
+ * @param {number} [config.defaultItemsPerPage=100] - Number of items to
+ *   request on a get request. Can be overridden for an individual request by
+ *   including numPerPage option
+ */
+module.exports = API;
