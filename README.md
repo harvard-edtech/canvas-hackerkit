@@ -13,13 +13,20 @@ See [github's git guide](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
 ### 3. Download the hacker kit
 
-a. Open Terminal (mac/linux) or Command Line (windows)
+#### Download via terminal (recommended)
 
+a. Open Terminal (mac/linux) or Command Line (windows)  
 b. Clone the hacker kit:
 
 ```bash
 git clone https://github.com/harvard-edtech/canvas-hackerkit.git
 ```
+
+#### Download via github.com (easier)
+
+a. Visit [the hacker-kit github.com page](https://github.com/harvard-edtech/canvas-hackerkit)  
+b. Click "Clone or download" in green  
+c. Click "Download Zip"
 
 ### 4. Add your credentials
 
