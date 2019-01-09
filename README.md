@@ -5,7 +5,7 @@ A set of terminal tools for Canvas
 
 ### 1. Install Node.js:
 
-Visit [nodejs.org](https://nodejs.org) to install.
+Visit [nodejs.org](https://nodejs.org) to install the LTS version.
 
 ### 2. Install git:
 

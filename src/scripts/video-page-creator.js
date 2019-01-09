@@ -121,10 +121,10 @@ module.exports = {
           if (lineText.includes('[')) {
             // Includes timestamp
             const parts = lineText.split(']');
-            const firstTimestamp = parts[0].replace('[','');
-            const secondTimestamp = parts[1].replace('[','');
-            start = toSecs(firstTimestamp);
-            end = toSecs(secondTimestamp);
+            const firstTimestamp = parts[0].replace('[','').replace('-', '');
+            const secondTimestamp = parts[1].replace('[','').replace('-', '');
+            start = toSecs(firstTimestamp.trim());
+            end = toSecs(secondTimestamp.trim());
             title = parts[2].trim();
           }
         } catch (err) {
