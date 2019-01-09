@@ -28,17 +28,17 @@ module.exports = {
     } = config;
 
     console.log('To continue, please create/update the /data/videoPages.txt file:');
-    console.log('- Paste each Matterhorn video id on a new line started by an "!"');
-    console.log('- To create a page for a video, write the page title on a line below it');
+    console.log('- Put each Matterhorn video id its own line');
+    console.log('- To create a page for a video, write page title(s) below it');
     console.log('- To soft trim a video, start the line with "[start][end]" where start/end is seconds or hh:mm:ss');
     console.log('\n');
 
     console.log('Example videoPage.txt file:');
-    console.log('! 037480fad-8af1-112e-1bbe-60304750a0a1');
+    console.log('037480fad-8af1-112e-1bbe-60304750a0a1');
     console.log('Welcome Video');
     console.log('Welcome Video Dup (same as the other welcome video)');
     console.log('');
-    console.log('! 547340ard-48ak-59aa-090f-428590493bb3');
+    console.log('547340ard-48ak-59aa-090f-428590493bb3');
     console.log('Lecture 1 (Full Video)')
     console.log('[0][30] First 30 seconds of Lecture 1');
     console.log('[00:00:00][01:27:00] First hour and 27 minutes of Lecture 1');
@@ -51,7 +51,7 @@ module.exports = {
     console.log('Choose a publish setting:');
     console.log('1 - don\'t publish videos by default');
     console.log('2 - publish videos by default');
-    console.log('\nNote: if you choose setting 1, you can publish specific videos by starting lines with "~"');
+    console.log('\nNote: with setting 1, to publish specific videos, start a line with "~"');
     console.log('Example: ~ [0][30] First 30 seconds of Lecture 1\n');
     console.log('You may still edit your videoPage.txt file at this time.')
     const setting = prompt('setting: ');
@@ -79,7 +79,19 @@ module.exports = {
       })
       .forEach((line) => {
         // Detect video ids
-        if (line.startsWith('!')) {
+        let isVideoId;
+        if (line.includes('-')) {
+          const parts = line.split('-');
+          isVideoId = (
+            parts.length === 5
+            && parts[0].length === 8
+            && parts[1].length === 4
+            && parts[2].length === 4
+            && parts[3].length === 4
+            && parts[4].length === 12
+          );
+        }
+        if (isVideoId) {
           // Found a new video!
           videos.push({
             id: line.substring(1).trim(),
