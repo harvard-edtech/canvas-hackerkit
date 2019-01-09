@@ -94,7 +94,7 @@ module.exports = {
         if (isVideoId) {
           // Found a new video!
           videos.push({
-            id: line.substring(1).trim(),
+            id: line.trim(),
             pages: [],
           });
           return;
@@ -142,7 +142,6 @@ module.exports = {
           published: publishedByDefault || forcePublished,
         });
       });
-    console.log(videos);
 
     // Confirm adding pages to Canvas
     clearScreen();
