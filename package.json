@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update": "git pull"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/harvard-edtech/canvas-hackerkit#readme",
   "dependencies": {
-    "caccl": "~1.0.23",
+    "caccl": "^1.0.62",
+    "caccl-api": "^1.0.17",
     "fs": "0.0.1-security",
+    "papaparse": "^4.6.3",
     "prompt-sync": "^4.1.6"
   }
 }

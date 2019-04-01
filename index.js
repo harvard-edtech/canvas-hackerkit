@@ -32,7 +32,8 @@ const printErrorAndQuit = (err) => {
 clearScreen();
 console.log('Welcome to the Canvas HackerKit!');
 console.log('To quit at any time, press ctrl+c');
-console.log('\n');
+console.log('To update this tool, quit and use "npm run update" instead')
+console.log('');
 
 /*------------------------------------------------------------------------*/
 /*                              Access Token                              */
