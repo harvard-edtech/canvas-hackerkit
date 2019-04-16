@@ -4,6 +4,7 @@ const CSVParser = require('papaparse');
 
 const TYPES = {
   SHORT_RESPONSE: 'short-response',
+  ESSAY_RESPONSE: 'essay_question',
   MULTIPLE_CHOICE: 'multiple-choice',
 };
 
@@ -21,7 +22,7 @@ module.exports = {
     } = config;
 
     console.log('To continue, please create/update the /data/quizToCreate.csv file:');
-    console.log('- Add quiz title + description on the first row. Row: [title,description]');
+    console.log('- Add quiz title + description on the first row. Row: [title|description]');
     console.log('- Put each quiz question on its own row. Row: [points|question text]');
     console.log('- For multiple choice questions, add each answer below the question');
     console.log('   - Mark correct answer with ">". Row: [>|correct answer text]');
@@ -97,7 +98,7 @@ module.exports = {
         currentQuestion = {
           points: parseFloat(currRow[0]),
           text: currRow[1],
-          type: TYPES.SHORT_RESPONSE,
+          type: TYPES.ESSAY_RESPONSE,
         };
       } else {
         if (!currentQuestion) {
@@ -137,26 +138,30 @@ module.exports = {
       .then((quizObj) => {
         quiz = quizObj;
         // Add questions to quiz
-        return Promise.all(questions.map((question) => {
-          if (question.type === TYPES.MULTIPLE_CHOICE) {
-            return api.course.quiz.createMultipleChoiceQuestion({
-              courseId,
-              quizId: quiz.id,
-              name: question.text,
-              text: question.text,
-              pointsPossible: question.points,
-              answers: question.answers,
-            });
-          } else {
-            return api.course.quiz.createShortAnswerQuestion({
-              courseId,
-              quizId: quiz.id,
-              name: question.text,
-              text: question.text,
-              pointsPossible: question.points,
-            });
-          }
-        }));
+        let quizQueue = Promise.resolve();
+        questions.forEach((question) => {
+          quizQueue = quizQueue.then(() => {
+            if (question.type === TYPES.MULTIPLE_CHOICE) {
+              return api.course.quiz.createMultipleChoiceQuestion({
+                courseId,
+                quizId: quiz.id,
+                name: question.text,
+                text: question.text,
+                pointsPossible: question.points,
+                answers: question.answers,
+              });
+            } else {
+              return api.course.quiz.createEssayQuestion({
+                courseId,
+                quizId: quiz.id,
+                name: question.text,
+                text: question.text,
+                pointsPossible: question.points,
+              });
+            }
+          });
+        });
+        return quizQueue;
       })
       .then(() => {
         console.log(`\n\nDone! See the quiz here:\nhttps://${canvasHost}/courses/${courseId}/quizzes/${quiz.id}`);
