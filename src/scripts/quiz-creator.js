@@ -139,8 +139,10 @@ module.exports = {
         quiz = quizObj;
         // Add questions to quiz
         let quizQueue = Promise.resolve();
-        questions.forEach((question) => {
+        console.log('\nProgress:\n0%');
+        questions.forEach((question, index) => {
           quizQueue = quizQueue.then(() => {
+            console.log(`${Math.floor(100*(index+1)/questions.length)}%`);
             if (question.type === TYPES.MULTIPLE_CHOICE) {
               return api.course.quiz.createMultipleChoiceQuestion({
                 courseId,
