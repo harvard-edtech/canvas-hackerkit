@@ -47,3 +47,7 @@ Make sure you `cd` into the hacker kit.
 ### 3. Start the hacker kit
 
 Run `npm start`.
+
+## Updating your HackerKit
+
+Run `git pull`
