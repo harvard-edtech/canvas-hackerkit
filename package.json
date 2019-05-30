@@ -1,6 +1,6 @@
 {
   "name": "canvas-hackerkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A set of terminal tools for Canvas",
   "main": "index.js",
   "scripts": {
