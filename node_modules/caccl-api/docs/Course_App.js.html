@@ -50,6 +50,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -116,20 +117,24 @@ class App extends EndpointCategory {
  * @method list
  * @param {object} options - object containing all arguments
  * @param {number} options.courseId - Canvas course Id to query
- * @param {boolean} [options.includeParents] - If truthy, includes tools
+ * @param {boolean} [options.excludeParents] - If true, excludes tools
  *   installed in all accounts above the current context
  * @return {Promise.&lt;Object[]>} list of external tools {@link https://canvas.instructure.com/doc/api/external_tools.html}
  */
 App.list = function (options) {
+  const params = (
+    !options.excludeParents
+      ? { include_parents: false }
+      : {}
+  );
   return this.visitEndpoint({
     path: `${prefix.v1}/courses/${options.courseId}/external_tools`,
     method: 'GET',
-    params: {
-      include_parents: utils.isTruthy(options.includeParents),
-    },
+    params,
   });
 };
 App.list.action = 'get the list of apps installed into a course';
+App.list.requiredParams = ['courseId'];
 
 /**
  * Gets info on a single LTI tool
@@ -149,6 +154,7 @@ App.get = function (options) {
   });
 };
 App.get.action = 'get info on a specific LTI app in a course';
+App.get.requiredParams = ['courseId', 'appId'];
 
 /**
  * Adds an LTI app to a Canvas course
@@ -184,6 +190,13 @@ App.add = function (options) {
   });
 };
 App.add.action = 'add an LTI app to a course';
+App.add.requiredParams = [
+  'courseId',
+  'name',
+  'key',
+  'secret',
+  'xml',
+];
 
 /**
  * Removes an LTI app from a Canvas course
@@ -203,6 +216,7 @@ App.remove = function (options) {
   });
 };
 App.remove.action = 'remove an LTI app from a course';
+App.remove.requiredParams = ['courseId', 'appId'];
 
 /*------------------------------------------------------------------------*/
 /*                                Metadata                                */
@@ -279,6 +293,7 @@ App.getMetadata = function (options) {
     });
 };
 App.getMetadata.action = 'get metadata for an LTI app in a course';
+App.getMetadata.requiredParams = ['courseId', 'metadataId'];
 
 /**
  * Updates the metadata for an LTI app in a course. Note: this endpoint requires
@@ -351,6 +366,7 @@ App.updateMetadata = function (options) {
     });
 };
 App.updateMetadata.action = 'get metadata for an LTI app in a course';
+App.updateMetadata.requiredParams = ['courseId', 'metadataId'];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

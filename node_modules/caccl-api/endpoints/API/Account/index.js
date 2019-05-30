@@ -24,7 +24,7 @@ class Account extends EndpointCategory {
  * Gets info on a specific course
  * @author Gabriel Abrams
  * @method get
- * @memberof api.course
+ * @memberof api.account
  * @instance
  * @param {object} options - object containing all arguments
  * @param {number} options.accountId - Canvas acount Id to get info on

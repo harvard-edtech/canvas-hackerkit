@@ -1,11 +1,34 @@
 # caccl-api
 A class that defines a set of Canvas endpoints that can be easily accessed. Each endpoint is equipped with the appropriate pre- and post-processing steps to make the Canvas endpoints "behave". For instance, _getSubmissions()_ fetches student submissions and removes the test student's submission in post-processing.
 
-## I _have_ a caccl-api instance...
+## Endpoints by Category:
 
-**Click the _Endpoints_ button in the menu at the top of the page for the full list of endpoint functions**
+- [account](https://harvard-edtech.github.io/caccl-api/api.account.html)
+- [course](https://harvard-edtech.github.io/caccl-api/api.course.html)
+  - [app](https://harvard-edtech.github.io/caccl-api/api.course.app.html)
+  - [assignment](https://harvard-edtech.github.io/caccl-api/api.course.assignment.html)
+  - [assignmentGroup](https://harvard-edtech.github.io/caccl-api/api.course.assignmentGroup.html)
+  - [gradebookColumn](https://harvard-edtech.github.io/caccl-api/api.course.gradebookColumn.html)
+  - [group](https://harvard-edtech.github.io/caccl-api/api.course.group.html)
+  - [groupSet](https://harvard-edtech.github.io/caccl-api/api.course.groupSet.html)
+  - [page](https://harvard-edtech.github.io/caccl-api/api.course.page.html)
+  - [quiz](https://harvard-edtech.github.io/caccl-api/api.course.quiz.html)
+  - [rubric](https://harvard-edtech.github.io/caccl-api/api.course.rubric.html)
+  - [section](https://harvard-edtech.github.io/caccl-api/api.course.section.html)
+- user
+  - [self](https://harvard-edtech.github.io/caccl-api/api.user.self.html)
 
-Using _async-await_, here are some examples:
+### Endpoint not listed?
+
+Use **[our custom endpoint function](https://harvard-edtech.github.io/caccl-api/api.other.endpoint.html)** to call _any Canvas endpoint_.
+
+Also, consider contributing back to our open source project and adding official support for that endpoint.
+
+### How to call an endpoint:
+
+If you set up your project with [caccl on npm](https://www.npmjs.com/package/caccl), you should _already_ have a caccl-api instance. We'll call that instance "api".
+
+All endpoint functions take a single object as their argument and return a promise. We recommend using _async-await_. See the following examples: 
 
 ```js
 // List the students in a course
@@ -15,7 +38,7 @@ const students = await api.course.listStudents({ courseId: 58329 });
 const assignments = await api.course.assignment.list({ courseId: 58329 });
 ```
 
-## I _do not have_ a caccl-api instance...
+## I need to create a caccl-api instance
 
 Note: if you set up your project with [caccl on npm](https://www.npmjs.com/package/caccl), you should _already_ have a caccl-api instance. Please check the [caccl docs](https://www.npmjs.com/package/caccl) to see how to access your alread-initialized caccl-api instance.
 

@@ -49,6 +49,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -216,6 +217,105 @@
 </dd>
 											<hr/>
 											<dt class="symbol-title function public collapsible-symbol">
+			<h4 id="get" class="function public"><span class="name">get</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Promise.&lt;Object>}</span></h4>
+		</dt>
+<dd class="symbol-details function public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description">Get info on a specific page in a course</div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>options</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									object containing all arguments
+										<table class="params table table-striped">
+											<thead>
+											<tr>
+													<th>Name</th>
+												<th>Type</th>
+												<th class="last">Description</th>
+											</tr>
+											</thead>
+											<tbody>
+												<tr>
+														<td><code>courseId</code></td>
+													<td><span class="param-type">number</span></td>
+													<td class="last">
+															Canvas course Id to query
+													</td>
+												</tr>
+												<tr>
+														<td><code>pageURL</code></td>
+													<td><span class="param-type">string</span></td>
+													<td class="last">
+															Canvas page url (just the last part of
+									  path)
+													</td>
+												</tr>
+											</tbody>
+										</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Promise.&lt;Object></span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description">Canvas Page <a href="https://canvas.instructure.com/doc/api/pages.html#Page">https://canvas.instructure.com/doc/api/pages.html#Page</a></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- author -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Author</label>
+								<div class="col-sm-9">
+										<p class="form-control-static">Gabriel Abrams</p>
+								</div>
+							</div>
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-39">line 39</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public collapsible-symbol">
 			<h4 id="update" class="function public"><span class="name">update</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Promise.&lt;Object>}</span></h4>
 		</dt>
 <dd class="symbol-details function public  collapsible-symbol">
@@ -367,7 +467,105 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-58">line 58</a></p>
+									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-60">line 60</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public collapsible-symbol">
+			<h4 id="delete" class="function public"><span class="name">delete</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Promise.&lt;Object>}</span></h4>
+		</dt>
+<dd class="symbol-details function public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description">Deletes a page from a course</div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>options</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									object containing all arguments
+										<table class="params table table-striped">
+											<thead>
+											<tr>
+													<th>Name</th>
+												<th>Type</th>
+												<th class="last">Description</th>
+											</tr>
+											</thead>
+											<tbody>
+												<tr>
+														<td><code>courseId</code></td>
+													<td><span class="param-type">number</span></td>
+													<td class="last">
+															Canvas course Id to query
+													</td>
+												</tr>
+												<tr>
+														<td><code>pageURL</code></td>
+													<td><span class="param-type">string</span></td>
+													<td class="last">
+															Page url to delete (just last part of path)
+													</td>
+												</tr>
+											</tbody>
+										</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Promise.&lt;Object></span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description">Canvas Page <a href="https://canvas.instructure.com/doc/api/pages.html#Page">https://canvas.instructure.com/doc/api/pages.html#Page</a></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- author -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Author</label>
+								<div class="col-sm-9">
+										<p class="form-control-static">Gabriel Abrams</p>
+								</div>
+							</div>
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-136">line 136</a></p>
 								</div>
 							</div>
 			
@@ -517,204 +715,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-98">line 98</a></p>
-								</div>
-							</div>
-			
-			
-			
-			
-					</form>
-			</div>	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public collapsible-symbol">
-			<h4 id="delete" class="function public"><span class="name">delete</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Promise.&lt;Object>}</span></h4>
-		</dt>
-<dd class="symbol-details function public  collapsible-symbol">
-	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description">Deletes a page from a course</div>
-			</div>			<div class="callout callout-info">
-				<h5>Parameters</h5>
-				<table class="params table table-striped">
-					<thead>
-					<tr>
-							<th>Name</th>
-						<th>Type</th>
-						<th class="last">Description</th>
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-								<td><code>options</code></td>
-							<td><span class="param-type">object</span></td>
-							<td class="last">
-									object containing all arguments
-										<table class="params table table-striped">
-											<thead>
-											<tr>
-													<th>Name</th>
-												<th>Type</th>
-												<th class="last">Description</th>
-											</tr>
-											</thead>
-											<tbody>
-												<tr>
-														<td><code>courseId</code></td>
-													<td><span class="param-type">number</span></td>
-													<td class="last">
-															Canvas course Id to query
-													</td>
-												</tr>
-												<tr>
-														<td><code>pageURL</code></td>
-													<td><span class="param-type">string</span></td>
-													<td class="last">
-															Page url to delete (just last part of path)
-													</td>
-												</tr>
-											</tbody>
-										</table>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
-							<div class="form-group">
-								<label class="col-sm-3 control-label returns-type"><span class="param-type">Promise.&lt;Object></span></label>
-								<div class="col-sm-9">
-									<div class="form-control-static returns-description">Canvas Page <a href="https://canvas.instructure.com/doc/api/pages.html#Page">https://canvas.instructure.com/doc/api/pages.html#Page</a></div>
-								</div>
-							</div>
-					</form>
-			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-							<!-- author -->
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Author</label>
-								<div class="col-sm-9">
-										<p class="form-control-static">Gabriel Abrams</p>
-								</div>
-							</div>
-			
-			
-			
-							<!-- source -->
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Source</label>
-								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-132">line 132</a></p>
-								</div>
-							</div>
-			
-			
-			
-			
-					</form>
-			</div>	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public collapsible-symbol">
-			<h4 id="get" class="function public"><span class="name">get</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Promise.&lt;Object>}</span></h4>
-		</dt>
-<dd class="symbol-details function public  collapsible-symbol">
-	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description">Get info on a specific page in a course</div>
-			</div>			<div class="callout callout-info">
-				<h5>Parameters</h5>
-				<table class="params table table-striped">
-					<thead>
-					<tr>
-							<th>Name</th>
-						<th>Type</th>
-						<th class="last">Description</th>
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-								<td><code>options</code></td>
-							<td><span class="param-type">object</span></td>
-							<td class="last">
-									object containing all arguments
-										<table class="params table table-striped">
-											<thead>
-											<tr>
-													<th>Name</th>
-												<th>Type</th>
-												<th class="last">Description</th>
-											</tr>
-											</thead>
-											<tbody>
-												<tr>
-														<td><code>courseId</code></td>
-													<td><span class="param-type">number</span></td>
-													<td class="last">
-															Canvas course Id to query
-													</td>
-												</tr>
-												<tr>
-														<td><code>pageURL</code></td>
-													<td><span class="param-type">string</span></td>
-													<td class="last">
-															Canvas page url (just the last part of
-									  path)
-													</td>
-												</tr>
-											</tbody>
-										</table>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
-							<div class="form-group">
-								<label class="col-sm-3 control-label returns-type"><span class="param-type">Promise.&lt;Object></span></label>
-								<div class="col-sm-9">
-									<div class="form-control-static returns-description">Canvas Page <a href="https://canvas.instructure.com/doc/api/pages.html#Page">https://canvas.instructure.com/doc/api/pages.html#Page</a></div>
-								</div>
-							</div>
-					</form>
-			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-							<!-- author -->
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Author</label>
-								<div class="col-sm-9">
-										<p class="form-control-static">Gabriel Abrams</p>
-								</div>
-							</div>
-			
-			
-			
-							<!-- source -->
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Source</label>
-								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-38">line 38</a></p>
+									<p class="form-control-static"><a href="Course_Page.js.html">Course/Page.js</a>, <a href="Course_Page.js.html#line-101">line 101</a></p>
 								</div>
 							</div>
 			

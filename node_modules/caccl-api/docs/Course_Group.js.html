@@ -50,6 +50,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -121,6 +122,7 @@ Group.get = function (options) {
   });
 };
 Group.get.action = 'get info on a specific group in a course';
+Group.get.requiredParams = ['groupId'];
 
 // NOTE: to create or delete a group, see endpoints in groupSets
 
@@ -145,6 +147,7 @@ Group.listMembers = function (options) {
   });
 };
 Group.listMembers.action = 'get the list of members in a specific group';
+Group.listMembers.requiredParams = ['groupId'];
 
 /**
  * Gets the list of members in a group
@@ -174,6 +177,7 @@ Group.updateMembers = function (options) {
     });
 };
 Group.updateMembers.action = 'update the list of members in a group';
+Group.updateMembers.requiredParams = ['groupId'];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

@@ -50,6 +50,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -129,6 +130,7 @@ Quiz.list = function (options) {
   });
 };
 Quiz.list.action = 'get the list of quizzes in a course';
+Quiz.list.requiredParams = ['courseId'];
 
 /**
  * Get info on a specific quiz in a course
@@ -149,6 +151,7 @@ Quiz.get = function (options) {
   });
 };
 Quiz.get.action = 'get info on a specific quiz in a course';
+Quiz.get.requiredParams = ['courseId', 'quizId'];
 
 /**
  * Updates a specific quiz in a course
@@ -159,8 +162,8 @@ Quiz.get.action = 'get info on a specific quiz in a course';
  * @param {object} options - object containing all arguments
  * @param {number} options.courseId - Canvas course Id to create the quiz in
  * @param {number} options.quizId - Canvas course Id to create the quiz in
- * @param {boolean} options.suppressNotification - If true, does not notify
- *   users that the quiz has been updated
+ * @param {boolean} [options.suppressNotification=false] - If true, does not
+ *   notify users that the quiz has been updated
  * @param {string} [options.title=current value] - New title of the quiz
  * @param {string} [options.description=current value] - New HTML description of
  *   the quiz
@@ -280,6 +283,7 @@ Quiz.update = function (options) {
     });
 };
 Quiz.update.action = 'update a specific quiz in a course';
+Quiz.update.requiredParams = ['courseId', 'quizId'];
 
 /**
  * Creates a new quiz in a course
@@ -403,6 +407,7 @@ Quiz.create = function (options) {
     });
 };
 Quiz.create.action = 'update a specific quiz in a course';
+Quiz.create.requiredParams = ['courseId', 'title'];
 
 /**
  * Deletes a quiz from a course
@@ -434,6 +439,7 @@ Quiz.delete = function (options) {
     });
 };
 Quiz.delete.action = 'delete a specific quiz from a course';
+Quiz.delete.requiredParams = ['courseId', 'quizId'];
 
 /*------------------------------------------------------------------------*/
 /*                         Quiz Question Endpoints                        */
@@ -458,6 +464,7 @@ Quiz.listQuestions = function (options) {
   });
 };
 Quiz.listQuestions.action = 'get the list of questions in a specific quiz in a course';
+Quiz.listQuestions.requiredParams = ['courseId', 'quizId'];
 
 /**
  * Creates a new multiple choice question and adds it to a quiz in a course
@@ -518,6 +525,14 @@ Quiz.createMultipleChoiceQuestion = function (options) {
   });
 };
 Quiz.createMultipleChoiceQuestion.action = 'create a new multiple choice question and add it to a quiz in a course';
+Quiz.createMultipleChoiceQuestion.requiredParams = [
+  'courseId',
+  'quizId',
+  'name',
+  'text',
+  'pointsPossible',
+  'answers',
+];
 
 /**
  * Creates a new essay question and adds it to a quiz in a course
@@ -566,6 +581,68 @@ Quiz.createEssayQuestion = function (options) {
   });
 };
 Quiz.createEssayQuestion.action = 'create a new essay question and add it to a quiz in a course';
+Quiz.createEssayQuestion.requiredParams = [
+  'courseId',
+  'quizId',
+  'name',
+  'text',
+  'pointsPossible',
+];
+
+/**
+ * Creates a new short answer question and adds it to a quiz in a course
+ * @author Gabriel Abrams
+ * @method createShortAnswerQuestion
+ * @memberof api.course.quiz
+ * @instance
+ * @param {object} options - object containing all arguments
+ * @param {number} options.courseId - Canvas course Id to query
+ * @param {number} options.quizId - Canvas quiz Id (not the quiz's assignment
+ *   Id)
+ * @param {string} options.name - Name of the question
+ * @param {string} options.text - The text of the question, as displayed to the
+ *   quiz taker
+ * @param {number} options.pointsPossible - Maximum number of points
+ * @param {number} [options.position=last] - Optional. Position of the question
+ *   with respect to the other questions in the quiz
+ * @param {string} [options.correctComment=null] - Comment to display if the
+ *   student answers correctly
+ * @param {string} [options.incorrectComment=null] - Comment to display if the
+ *   student answers incorrectly
+ * @param {string} [options.neutralComment=null] - Comment to display regardless
+ *   of how the student answers
+ * @return {Promise.&lt;Object>} Canvas QuizQuestion {@link https://canvas.instructure.com/doc/api/quiz_questions.html#QuizQuestion}
+ */
+Quiz.createShortAnswerQuestion = function (options) {
+  const params = {
+    'question[question_name]': options.name,
+    'question[question_text]': options.text,
+    'question[question_type]': 'short_answer_question',
+    'question[position]': utils.includeIfNumber(options.position),
+    'question[points_possible]': options.pointsPossible,
+    'question[correct_comments]':
+      utils.includeIfTruthy(options.correctComment),
+    'question[incorrect_comments]':
+      utils.includeIfTruthy(options.incorrectComment),
+    'question[neutralComment]':
+      utils.includeIfTruthy(options.neutralComment),
+    'question[text_after_answers]':
+      utils.includeIfTruthy(options.textAfterAnswers),
+  };
+  return this.visitEndpoint({
+    params,
+    path: `${prefix.v1}/courses/${options.courseId}/quizzes/${options.quizId}/questions`,
+    method: 'POST',
+  });
+};
+Quiz.createShortAnswerQuestion.action = 'create a new short answer question and add it to a quiz in a course';
+Quiz.createShortAnswerQuestion.requiredParams = [
+  'courseId',
+  'quizId',
+  'name',
+  'text',
+  'pointsPossible',
+];
 
 /*------------------------------------------------------------------------*/
 /*                        Quiz Submission Endpoints                       */
@@ -593,6 +670,7 @@ Quiz.listSubmissions = function (options) {
     });
 };
 Quiz.listSubmissions.action = 'get the list of submissions to a specific quiz in a course';
+Quiz.listSubmissions.requiredParams = ['courseId', 'quizId'];
 
 /**
  * Gets info on a specific submission to a quiz in a course
@@ -617,6 +695,11 @@ Quiz.getSubmission = function (options) {
     });
 };
 Quiz.getSubmission.action = 'get the list of submissions to a specific quiz in a course';
+Quiz.getSubmission.requiredParams = [
+  'courseId',
+  'quizId',
+  'submissionId',
+];
 
 /**
  * Creates a new submission to a specific quiz in a course on behalf of the
@@ -689,6 +772,11 @@ Quiz.createSubmission = function (options) {
     });
 };
 Quiz.createSubmission.action = 'create a new submission to a specific quiz in a course on behalf of the current user';
+Quiz.createSubmission.requiredParams = [
+  'courseId',
+  'quizId',
+  'answers',
+];
 
 /*------------------------------------------------------------------------*/
 /*                         Quiz Grading Endpoints                         */
@@ -892,6 +980,7 @@ Quiz.listQuestionGrades = function (options) {
     });
 };
 Quiz.listQuestionGrades.action = 'list quiz question grades for a specific quiz in a course';
+Quiz.listQuestionGrades.requiredParams = ['courseId', 'quizId'];
 
 /**
  * Updates the question grades for a specific submission to a quiz in a course
@@ -963,6 +1052,11 @@ Quiz.updateQuestionGrades = function (options) {
   });
 };
 Quiz.updateQuestionGrades.action = 'update the question grades for a specific submission to a quiz in a course';
+Quiz.updateQuestionGrades.requiredParams = [
+  'courseId',
+  'quizId',
+  'submissionId',
+];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

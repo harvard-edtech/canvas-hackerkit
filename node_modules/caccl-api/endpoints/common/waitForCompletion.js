@@ -43,6 +43,15 @@ module.exports = (options) => {
         },
       })
         .then((statusResponse) => {
+          // Detect issues
+          if (statusResponse.workflow_state === 'failed') {
+            return reject(new CACCLError({
+              message: statusResponse.message,
+              code: errorCodes.waitForCompletionFailure,
+            }));
+          }
+
+          // If no success, keep trying
           if (statusResponse.workflow_state !== 'completed') {
             // Not yet completed
             if (Date.now() > stopTime) {

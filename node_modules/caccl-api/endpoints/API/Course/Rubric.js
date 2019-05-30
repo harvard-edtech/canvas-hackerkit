@@ -34,6 +34,7 @@ Rubric.list = function (options) {
   });
 };
 Rubric.list.action = 'list all the rubrics in a course';
+Rubric.list.requiredParams = ['courseId'];
 
 /**
  * Gets info on a specific rubric in a course
@@ -64,6 +65,7 @@ Rubric.get = function (options) {
   });
 };
 Rubric.get.action = 'get info on a specific rubric in a course';
+Rubric.get.requiredParams = ['courseId', 'rubricId'];
 
 /**
  * Creates a new rubric for grading with free form comments enabled and add it
@@ -145,6 +147,11 @@ Rubric.createFreeFormGradingRubricInAssignment = function (options) {
     });
 };
 Rubric.createFreeFormGradingRubricInAssignment.action = 'create a new free form grading rubric and add it to a specific assignment in a course';
+Rubric.createFreeFormGradingRubricInAssignment.requiredParams = [
+  'courseId',
+  'assignmentId',
+  'rubricItems',
+];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

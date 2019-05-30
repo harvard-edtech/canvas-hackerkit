@@ -34,6 +34,7 @@ AssignmentGroup.list = function (options) {
   });
 };
 AssignmentGroup.list.action = 'list the assignment groups in a course';
+AssignmentGroup.list.requiredParams = ['courseId'];
 
 /**
  * Gets info on a specific assignment group in a course
@@ -44,7 +45,6 @@ AssignmentGroup.list.action = 'list the assignment groups in a course';
  * @param {object} options - object containing all arguments
  * @param {number} options.courseId - Canvas course Id to query
  * @param {number} options.assignmentGroupId - Assignment group to get
- * @param {number} options.courseId - Canvas course Id to query
  * @return {Promise.<Object>} Canvas AssignmentGroup {@link https://canvas.instructure.com/doc/api/assignment_groups.html#AssignmentGroup}
  */
 AssignmentGroup.get = function (options) {
@@ -54,6 +54,10 @@ AssignmentGroup.get = function (options) {
   });
 };
 AssignmentGroup.get.action = 'get info on a specific assignment group in a course';
+AssignmentGroup.get.requiredParams = [
+  'courseId',
+  'assignmentGroupId',
+];
 
 /**
  * Updates an assignment group in a course
@@ -79,6 +83,7 @@ AssignmentGroup.update = function (options) {
   });
 };
 AssignmentGroup.update.action = 'update an assignment group in a course';
+AssignmentGroup.update.requiredParams = ['courseId', 'assignmentGroupId'];
 
 /**
  * Create a new assignment group in a course
@@ -103,6 +108,7 @@ AssignmentGroup.create = function (options) {
   });
 };
 AssignmentGroup.create.action = 'create a new assignment group in a course';
+AssignmentGroup.create.requiredParams = ['courseId', 'name'];
 
 /**
  * Deletes an assignment group from a course
@@ -140,6 +146,7 @@ AssignmentGroup.delete = function (options) {
     });
 };
 AssignmentGroup.delete.action = 'delete an assignment group from a course';
+AssignmentGroup.delete.requiredParams = ['courseId', 'assignmentGroupId'];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

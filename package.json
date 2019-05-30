@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/harvard-edtech/canvas-hackerkit#readme",
   "dependencies": {
-    "caccl": "^1.0.62",
-    "caccl-api": "^1.0.17",
+    "caccl": "^1.0.79",
+    "caccl-api": "^1.0.24",
     "fs": "0.0.1-security",
     "papaparse": "^4.6.3",
     "prompt-sync": "^4.1.6"

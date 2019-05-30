@@ -1,2 +1,0 @@
-We are including a new .eslintrc.json file here to override our default .eslintrc.json configuration file so we can:
-- Allow @action tags on endpoints to continue past the 80 char line limit

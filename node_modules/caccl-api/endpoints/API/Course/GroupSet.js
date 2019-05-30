@@ -43,6 +43,7 @@ GroupSet.list = function (options) {
   });
 };
 GroupSet.list.action = 'get the list of group sets in a course';
+GroupSet.list.requiredParams = ['courseId'];
 
 /**
  * Gets info on a specific group set
@@ -61,6 +62,7 @@ GroupSet.get = function (options) {
   });
 };
 GroupSet.get.action = 'get info on a specific group set in a course';
+GroupSet.get.requiredParams = ['groupSetId'];
 
 /**
  * Create a group set in a course
@@ -89,6 +91,7 @@ GroupSet.create = function (options) {
     });
 };
 GroupSet.create.action = 'create a new group set in a course';
+GroupSet.create.requiredParams = ['courseId', 'name'];
 
 /**
  * Deletes a group set
@@ -114,6 +117,7 @@ GroupSet.delete = function (options) {
     });
 };
 GroupSet.delete.action = 'delete a specific group set from a course';
+GroupSet.delete.requiredParams = ['courseId', 'groupSetId'];
 
 /*------------------------------------------------------------------------*/
 /*                   Endpoints for Groups in Group Sets                   */
@@ -136,6 +140,7 @@ GroupSet.listGroups = function (options) {
   });
 };
 GroupSet.listGroups.action = 'get the list of groups in a group set';
+GroupSet.listGroups.requiredParams = ['groupSetId'];
 
 /**
  * Gets info on a specific group in a group set (alias to
@@ -152,6 +157,7 @@ GroupSet.getGroup = function (options) {
   return this.api.course.group.get(options);
 };
 GroupSet.getGroup.action = 'get info on a specific group in a group set';
+GroupSet.getGroup.requiredParams = ['groupId'];
 
 /**
  * Creates a new group in a group set
@@ -187,7 +193,7 @@ GroupSet.createGroup = function (options) {
     });
 };
 GroupSet.createGroup.action = 'create a new group in a group set';
-
+GroupSet.createGroup.requiredParams = ['courseId', 'groupSetId'];
 
 /**
  * Deletes a specific group from a group set
@@ -213,6 +219,7 @@ GroupSet.deleteGroup = function (options) {
     });
 };
 GroupSet.deleteGroup.action = 'delete a specific group from a group set';
+GroupSet.deleteGroup.requiredParams = ['groupSetId', 'groupId'];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

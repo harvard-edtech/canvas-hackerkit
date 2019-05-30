@@ -45,11 +45,28 @@ module.exports = (config = {}) => {
     api,
     cache,
     uncache,
+    action,
+    requiredParams,
   } = config;
   const defaults = (config.defaults || {});
 
   // Return a new fully-functional endpoint function
   return (options = {}) => {
+    // Make sure required parameters are included
+    if (requiredParams) {
+      // Check that all required parameters are not undefined
+      for (let i = 0; i < requiredParams.length; i++) {
+        const requiredParam = requiredParams[i];
+        if (options[requiredParam] === undefined) {
+          // Found an excluded required parameter
+          return Promise.reject(new CACCLError({
+            message: `We could not ${action} because the ${requiredParam} parameter is required but was excluded.`,
+            code: errorCodes.endpointCallExcludedRequiredParam,
+          }));
+        }
+      }
+    }
+
     // Generate a new visitEndpoint function
     const defaultNumRetries = (
       defaults.numRetries !== undefined
@@ -125,7 +142,7 @@ module.exports = (config = {}) => {
     ) {
       // Endpoint didn't return promise
       return Promise.reject(new CACCLError({
-        message: `The "${config.action}" endpoint malfunctioned: it didn't return a promise. Please contact an admin.`,
+        message: `The "${action}" endpoint malfunctioned: it didn't return a promise. Please contact an admin.`,
         code: errorCodes.endpointDidntReturnPromise,
       }));
     }
@@ -142,7 +159,7 @@ module.exports = (config = {}) => {
       // Add on action to the error
       if (newError.message.startsWith('While attempting to ')) {
         // There's already an action. Add an umbrella action
-        const newUmbrella = ` (in order to ${config.action})`;
+        const newUmbrella = ` (in order to ${action})`;
 
         // Check to see if an umbrella action has already been added
         const currUmbrella = newError.message.match(/\(in order to .*\)/g);
@@ -158,7 +175,7 @@ module.exports = (config = {}) => {
           newError.message = parts.join(',');
         }
       } else {
-        newError.message = `While attempting to ${config.action}, we ran into an error: ${(err.message || 'unknown')}`;
+        newError.message = `While attempting to ${action}, we ran into an error: ${(err.message || 'unknown')}`;
       }
 
       throw newError;

@@ -34,6 +34,7 @@ Page.list = function (options) {
   });
 };
 Page.list.action = 'get the list of pages in a course';
+Page.list.requiredParams = ['courseId'];
 
 /**
  * Get info on a specific page in a course
@@ -54,6 +55,7 @@ Page.get = function (options) {
   });
 };
 Page.get.action = 'get info on a specific page in a course';
+Page.get.requiredParams = ['courseId', 'pageURL'];
 
 /**
  * Updates a Canvas page
@@ -94,6 +96,7 @@ Page.update = function (options) {
   });
 };
 Page.update.action = 'update a specific page in a course';
+Page.update.requiredParams = ['courseId', 'pageURL'];
 
 /**
  * Creates a new page in a course
@@ -128,6 +131,7 @@ Page.create = function (options) {
   });
 };
 Page.create.action = 'create a new page in a course';
+Page.create.requiredParams = ['courseId'];
 
 /**
  * Deletes a page from a course
@@ -147,6 +151,7 @@ Page.delete = function (options) {
   });
 };
 Page.delete.action = 'delete a page from a course';
+Page.delete.requiredParams = ['courseId', 'pageURL'];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

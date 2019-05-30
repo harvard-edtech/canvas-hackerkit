@@ -50,6 +50,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -79,13 +80,35 @@
 			<div class="col-md-9 main-content">
 		<section class="readme-section">
 			<article><h1>caccl-api</h1><p>A class that defines a set of Canvas endpoints that can be easily accessed. Each endpoint is equipped with the appropriate pre- and post-processing steps to make the Canvas endpoints &quot;behave&quot;. For instance, <em>getSubmissions()</em> fetches student submissions and removes the test student's submission in post-processing.</p>
-<h2>I <em>have</em> a caccl-api instance...</h2><p><strong>Click the <em>Endpoints</em> button in the menu at the top of the page for the full list of endpoint functions</strong></p>
-<p>Using <em>async-await</em>, here are some examples:</p>
+<h2>Endpoints by Category:</h2><ul>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.account.html">account</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.html">course</a><ul>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.app.html">app</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.assignment.html">assignment</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.assignmentGroup.html">assignmentGroup</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.gradebookColumn.html">gradebookColumn</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.group.html">group</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.groupSet.html">groupSet</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.page.html">page</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.quiz.html">quiz</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.rubric.html">rubric</a></li>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.course.section.html">section</a></li>
+</ul>
+</li>
+<li>user<ul>
+<li><a href="https://harvard-edtech.github.io/caccl-api/api.user.self.html">self</a></li>
+</ul>
+</li>
+</ul>
+<h3>Endpoint not listed?</h3><p>Use <strong><a href="https://harvard-edtech.github.io/caccl-api/api.other.endpoint.html">our custom endpoint function</a></strong> to call <em>any Canvas endpoint</em>.</p>
+<p>Also, consider contributing back to our open source project and adding official support for that endpoint.</p>
+<h3>How to call an endpoint:</h3><p>If you set up your project with <a href="https://www.npmjs.com/package/caccl">caccl on npm</a>, you should <em>already</em> have a caccl-api instance. We'll call that instance &quot;api&quot;.</p>
+<p>All endpoint functions take a single object as their argument and return a promise. We recommend using <em>async-await</em>. See the following examples: </p>
 <pre class="prettyprint source lang-js"><code>// List the students in a course
 const students = await api.course.listStudents({ courseId: 58329 });
 
 // List the assignments in a course
-const assignments = await api.course.assignment.list({ courseId: 58329 });</code></pre><h2>I <em>do not have</em> a caccl-api instance...</h2><p>Note: if you set up your project with <a href="https://www.npmjs.com/package/caccl">caccl on npm</a>, you should <em>already</em> have a caccl-api instance. Please check the <a href="https://www.npmjs.com/package/caccl">caccl docs</a> to see how to access your alread-initialized caccl-api instance.</p>
+const assignments = await api.course.assignment.list({ courseId: 58329 });</code></pre><h2>I need to create a caccl-api instance</h2><p>Note: if you set up your project with <a href="https://www.npmjs.com/package/caccl">caccl on npm</a>, you should <em>already</em> have a caccl-api instance. Please check the <a href="https://www.npmjs.com/package/caccl">caccl docs</a> to see how to access your alread-initialized caccl-api instance.</p>
 <h3>Let caccl create one for you (recommended):</h3><p>caccl-api is a sub-component of the umbrella caccl project. Most people use caccl and allow it to initialize caccl-api for them.</p>
 <p>Visit <a href="https://www.npmjs.com/package/caccl">caccl</a> to get started.</p>
 <h3>Create caccl-api instance manually:</h3><p><strong>1. Initialize caccl-api:</strong></p>

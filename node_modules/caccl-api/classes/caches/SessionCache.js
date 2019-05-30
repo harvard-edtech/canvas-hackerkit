@@ -5,7 +5,7 @@
  * @see module: classes/caches/SessionCache
  */
 
-const CACCLError = require('../../../caccl-error/index.js');
+const CACCLError = require('caccl-error');
 const errorCodes = require('../../errorCodes.js');
 const hashParams = require('./helpers/hashParams.js');
 

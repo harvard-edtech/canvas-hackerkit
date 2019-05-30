@@ -50,6 +50,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -111,11 +112,11 @@ class Course extends EndpointCategory {
 /*------------------------------------------------------------------------*/
 
 Course.assignment = Assignment;
-Course.assignmentgroup = AssignmentGroup;
+Course.assignmentGroup = AssignmentGroup;
 Course.app = App;
-Course.gradebookcolumn = GradebookColumn;
+Course.gradebookColumn = GradebookColumn;
 Course.group = Group;
-Course.groupset = GroupSet;
+Course.groupSet = GroupSet;
 Course.page = Page;
 Course.quiz = Quiz;
 Course.rubric = Rubric;
@@ -169,6 +170,7 @@ Course.get = function (options) {
   });
 };
 Course.get.action = 'get info on a specific course';
+Course.get.requiredParams = ['courseId'];
 
 /*------------------------------------------------------------------------*/
 /*                               Enrollments                              */
@@ -231,6 +233,7 @@ Course.listEnrollments = function (options) {
   });
 };
 Course.listEnrollments.action = 'get enrollments from a course';
+Course.listEnrollments.requiredParams = ['courseId'];
 
 /**
  * Gets the list of student enrollmentss in a course
@@ -254,6 +257,7 @@ Course.listStudentEnrollments = function (options) {
   return this.api.course.listEnrollments(newOptions);
 };
 Course.listStudentEnrollments.action = 'get the list of student enrollments in a course';
+Course.listStudentEnrollments.requiredParams = ['courseId'];
 
 /**
  * Gets the list of TAs and Teacher enrollments in a course
@@ -277,6 +281,7 @@ Course.listTeachingTeamMemberEnrollments = function (options) {
   return this.api.course.listEnrollments(newOptions);
 };
 Course.listTeachingTeamMemberEnrollments.action = 'get the list of TAs and Teacher enrollments in a course';
+Course.listTeachingTeamMemberEnrollments.requiredParams = ['courseId'];
 
 /**
  * Gets the list of designer enrollments in a course
@@ -300,6 +305,7 @@ Course.listDesignerEnrollments = function (options) {
   return this.api.course.listEnrollments(newOptions);
 };
 Course.listDesignerEnrollments.action = 'get the list of designer enrollments in a course';
+Course.listDesignerEnrollments.requiredParams = ['courseId'];
 
 /**
  * Gets the list of observer enrollments in a course
@@ -323,6 +329,7 @@ Course.listObserverEnrollments = function (options) {
   return this.api.course.listEnrollments(newOptions);
 };
 Course.listObserverEnrollments.action = 'get the list of observer enrollments in a course';
+Course.listObserverEnrollments.requiredParams = ['courseId'];
 
 /*------------------------------------------------------------------------*/
 /*                                  Users                                 */
@@ -363,6 +370,7 @@ Course.getUser = function (options) {
   });
 };
 Course.getUser.action = 'get info on a user in a course';
+Course.getUser.requiredParams = ['courseId', 'userId'];
 
 /**
  * Gets info on all users in a course
@@ -402,6 +410,7 @@ Course.listUsers = function (options) {
   });
 };
 Course.listUsers.action = 'get info on all users in a course';
+Course.listUsers.requiredParams = ['courseId'];
 
 /**
  * Gets the list of students in a course
@@ -429,6 +438,7 @@ Course.listStudents = function (options) {
   return this.api.course.listUsers(newOptions);
 };
 Course.listStudents.action = 'get the list of students in a course';
+Course.listStudents.requiredParams = ['courseId'];
 
 /**
  * Gets the list of TAs and Teachers in a course
@@ -456,6 +466,7 @@ Course.listTeachingTeamMembers = function (options) {
   return this.api.course.listUsers(newOptions);
 };
 Course.listTeachingTeamMembers.action = 'get the list of TAs and Teachers in a course';
+Course.listTeachingTeamMembers.requiredParams = ['courseId'];
 
 /**
  * Gets the list of designers in a course
@@ -483,6 +494,7 @@ Course.listDesigners = function (options) {
   return this.api.course.listUsers(newOptions);
 };
 Course.listDesigners.action = 'get the list of designers in a course';
+Course.listDesigners.requiredParams = ['courseId'];
 
 /**
  * Gets the list of observers in a course
@@ -510,6 +522,7 @@ Course.listObservers = function (options) {
   return this.api.course.listUsers(newOptions);
 };
 Course.listObservers.action = 'get the list of observers in a course';
+Course.listObservers.requiredParams = ['courseId'];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

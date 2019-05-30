@@ -50,6 +50,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -114,6 +115,7 @@ Section.list = function (options) {
   });
 };
 Section.list.action = 'get the list of sections in a course';
+Section.list.requiredParams = ['courseId'];
 
 /**
  * Gets info on a specific section
@@ -133,6 +135,7 @@ Section.get = function (options) {
   });
 };
 Section.get.action = 'get info on a specific section in a course';
+Section.get.requiredParams = ['courseId', 'sectionId'];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

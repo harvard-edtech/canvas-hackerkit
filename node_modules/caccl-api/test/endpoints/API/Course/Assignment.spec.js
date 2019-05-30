@@ -377,6 +377,79 @@ describe('Endpoints > Course > Assignment', function () {
         });
     });
 
+    it('Grades a single submission', function () {
+      // Create a test assignment
+      const testAssignment = genTestAssignment();
+      testAssignment.published = true;
+      testAssignment.submissionTypes = ['online_text_entry'];
+      let testAssignmentId;
+      return api.course.assignment.create(testAssignment)
+        .catch((err) => {
+          throw new Error(`Could not create an assignment so we could run our test on it. We ran into an error: "${err.message}"`);
+        })
+        .then((assignment) => {
+          testAssignmentId = assignment.id;
+          // Create a submission
+          return studentAPI.course.assignment.createTextSubmission({
+            courseId,
+            assignmentId: testAssignmentId,
+            text: 'test_sub',
+            comment: 'student_comment',
+          });
+        })
+        .then(() => {
+          // Grade the submission
+          return api.course.assignment.updateGrade({
+            courseId,
+            assignmentId: testAssignmentId,
+            studentId: studentInfo.canvasId,
+            comment: 'instructor_comment',
+            points: 2.7,
+          });
+        })
+        .then(() => {
+          // Get submission
+          return api.course.assignment.getSubmission({
+            courseId,
+            assignmentId: testAssignmentId,
+            studentId: studentInfo.canvasId,
+            includeComments: true,
+          });
+        })
+        .then((sub) => {
+          // Check to see if any comments are in the submission
+          if (
+            !sub.submission_comments
+            || sub.submission_comments.length === 0
+          ) {
+            throw new Error('No submission comments available.');
+          }
+          // Check for the instructor's comment
+          let instructorComment;
+          for (let i = 0; i < sub.submission_comments.length; i++) {
+            if (sub.submission_comments[i].comment === 'instructor_comment') {
+              instructorComment = sub.submission_comments[i];
+              break;
+            }
+          }
+          if (!instructorComment) {
+            throw new Error('We couldn\'t find the comment. Perhaps it didn\'t upload.');
+          }
+          // Make sure the grade was added as well
+          if (sub.score !== 2.7) {
+            throw new Error('The submission grade wasn\'t changed properly');
+          }
+          // Clean up: delete the assignment
+          return api.course.assignment.delete({
+            courseId,
+            assignmentId: testAssignmentId,
+          })
+            .catch((err) => {
+              throw new Error(`We listed gradeable students successfully but could not delete the test assignment. We ran into this error: ${err.message}`);
+            });
+        });
+    });
+
     it('Batch uploads grades and comments (without rubric merge)', function () {
       this.timeout(25000);
       // Create a test assignment that we submit to

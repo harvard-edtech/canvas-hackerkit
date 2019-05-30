@@ -50,6 +50,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -130,6 +131,7 @@ GradebookColumn.list = function (options) {
   });
 };
 GradebookColumn.list.action = 'get the list of gradebook columns in a course';
+GradebookColumn.list.requiredParams = ['courseId'];
 
 /**
  * Gets info on a specific gradebook column in a course. This is a simulated
@@ -147,7 +149,7 @@ GradebookColumn.list.action = 'get the list of gradebook columns in a course';
  * @return {Promise.&lt;Object>} Canvas CustomColumn {@link https://canvas.instructure.com/doc/api/custom_gradebook_columns.html#CustomColumn}
  */
 GradebookColumn.get = function (options) {
-  return this.api.course.gradebookcolumn.list({
+  return this.api.course.gradebookColumn.list({
     courseId: options.courseId,
     includeHidden: options.isHidden,
   })
@@ -170,6 +172,7 @@ GradebookColumn.get = function (options) {
     });
 };
 GradebookColumn.get.action = 'get a specific gradebook column in a course';
+GradebookColumn.get.requiredParams = ['courseId', 'columnId'];
 
 /**
  * Updates a gradebook column's information
@@ -199,6 +202,7 @@ GradebookColumn.update = function (options) {
   });
 };
 GradebookColumn.update.action = 'update a gradebook column\'s information';
+GradebookColumn.update.requiredParams = ['courseId', 'columnId'];
 
 /**
  * Creates a new gradebook column in a course
@@ -228,6 +232,7 @@ GradebookColumn.create = function (options) {
   });
 };
 GradebookColumn.create.action = 'create a new gradebook column in a course';
+GradebookColumn.create.requiredParams = ['courseId'];
 
 /**
  * Deletes a gradebook column from a course
@@ -247,6 +252,7 @@ GradebookColumn.delete = function (options) {
   });
 };
 GradebookColumn.delete.action = 'delete a gradebook column from a course';
+GradebookColumn.delete.requiredParams = ['courseId', 'columnId'];
 
 /*------------------------------------------------------------------------*/
 /*                     Gradebook Column Data Endpoints                    */
@@ -273,6 +279,7 @@ GradebookColumn.listEntries = function (options) {
   });
 };
 GradebookColumn.listEntries.action = 'get the list of entries in a specific gradebook column in a course';
+GradebookColumn.listEntries.requiredParams = ['courseId', 'columnId'];
 
 /**
  * Update the list of entries in a specific gradebook column in a course
@@ -323,6 +330,11 @@ GradebookColumn.updateEntries = function (options) {
     });
 };
 GradebookColumn.updateEntries.action = 'batch update entries in a gradebook column';
+GradebookColumn.updateEntries.requiredParams = [
+  'courseId',
+  'columnId',
+  'entries',
+];
 
 /*------------------------------------------------------------------------*/
 /*                                 Export                                 */

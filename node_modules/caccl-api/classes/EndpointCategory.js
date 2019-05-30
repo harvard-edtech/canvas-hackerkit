@@ -84,6 +84,7 @@ class EndpointCategory {
         // Instantiate the endpoint
         this[prop] = instantiateEndpoint({
           action,
+          requiredParams: endpointCoreFunction.requiredParams,
           endpointCoreFunction: Subclass[prop],
           cache: config.cache,
           uncache: config.uncache,

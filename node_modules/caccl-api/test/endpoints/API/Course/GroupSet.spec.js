@@ -53,13 +53,13 @@ describe('Endpoints > Course > Group Sets', function () {
       let groupSetsToDelete;
       // Create group sets so we can check for them in the list
       return Promise.all([
-        api.course.groupset.create(genTestGroupSet(0)),
-        api.course.groupset.create(genTestGroupSet(1)),
+        api.course.groupSet.create(genTestGroupSet(0)),
+        api.course.groupSet.create(genTestGroupSet(1)),
       ])
         .then((groupSets) => {
           groupSetsToDelete = groupSets;
           // List the assignments
-          return api.course.groupset.list({
+          return api.course.groupSet.list({
             courseId,
           });
         })
@@ -76,7 +76,7 @@ describe('Endpoints > Course > Group Sets', function () {
 
           // Clean up: delete the group sets
           return Promise.all(groupSetsToDelete.map((groupSet) => {
-            return api.course.groupset.delete({
+            return api.course.groupSet.delete({
               courseId,
               groupSetId: groupSet.id,
             })
@@ -90,11 +90,11 @@ describe('Endpoints > Course > Group Sets', function () {
     it('Gets a group set', function () {
       let testGroupSetId;
       // Create a group sets so we can get it
-      return api.course.groupset.create(genTestGroupSet())
+      return api.course.groupSet.create(genTestGroupSet())
         .then((groupSet) => {
           testGroupSetId = groupSet.id;
           // Get the group set
-          return api.course.groupset.get({
+          return api.course.groupSet.get({
             courseId,
             groupSetId: testGroupSetId,
           });
@@ -111,7 +111,7 @@ describe('Endpoints > Course > Group Sets', function () {
           }
 
           // Clean up: delete the group set
-          return api.course.groupset.delete({
+          return api.course.groupSet.delete({
             courseId,
             groupSetId: testGroupSetId,
           })
@@ -124,11 +124,11 @@ describe('Endpoints > Course > Group Sets', function () {
     it('Creates a group set', function () {
       let testGroupSetId;
       // Create a group sets so we can get it
-      return api.course.groupset.create(genTestGroupSet())
+      return api.course.groupSet.create(genTestGroupSet())
         .then((groupSet) => {
           testGroupSetId = groupSet.id;
           // Get the group set
-          return api.course.groupset.get({
+          return api.course.groupSet.get({
             courseId,
             groupSetId: testGroupSetId,
           });
@@ -145,7 +145,7 @@ describe('Endpoints > Course > Group Sets', function () {
           }
 
           // Clean up: delete the group set
-          return api.course.groupset.delete({
+          return api.course.groupSet.delete({
             courseId,
             groupSetId: testGroupSetId,
           })
@@ -158,18 +158,18 @@ describe('Endpoints > Course > Group Sets', function () {
     it('Deletes a group set', function () {
       let testGroupSetId;
       // Create a group sets so we can get it
-      return api.course.groupset.create(genTestGroupSet())
+      return api.course.groupSet.create(genTestGroupSet())
         .then((groupSet) => {
           testGroupSetId = groupSet.id;
           // Delete the group set
-          return api.course.groupset.delete({
+          return api.course.groupSet.delete({
             courseId,
             groupSetId: testGroupSetId,
           });
         })
         .then(() => {
           // List the group sets so we can check if the group set was deleted
-          return api.course.groupset.list({
+          return api.course.groupSet.list({
             courseId,
           });
         })
@@ -192,22 +192,22 @@ describe('Endpoints > Course > Group Sets', function () {
     it('Lists groups in a group set', function () {
       let testGroupSetId;
       // Create a group sets so we can create groups in it and list those groups
-      return api.course.groupset.create(genTestGroupSet())
+      return api.course.groupSet.create(genTestGroupSet())
         .then((groupSet) => {
           testGroupSetId = groupSet.id;
           // Create test groups in the group sets
           return Promise.all([
-            api.course.groupset.createGroup(
+            api.course.groupSet.createGroup(
               genTestGroupInGroupSet(testGroupSetId, 0)
             ),
-            api.course.groupset.createGroup(
+            api.course.groupSet.createGroup(
               genTestGroupInGroupSet(testGroupSetId, 1)
             ),
           ]);
         })
         .then(() => {
           // List groups in the group set
-          return api.course.groupset.listGroups({
+          return api.course.groupSet.listGroups({
             groupSetId: testGroupSetId,
           });
         })
@@ -223,7 +223,7 @@ describe('Endpoints > Course > Group Sets', function () {
           }
 
           // Clean up: delete the group set
-          return api.course.groupset.delete({
+          return api.course.groupSet.delete({
             courseId,
             groupSetId: testGroupSetId,
           })
@@ -236,17 +236,17 @@ describe('Endpoints > Course > Group Sets', function () {
     it('Gets a group in a group set', function () {
       let testGroupSetId;
       // Create a group sets so we can add a group to it and then get that group
-      return api.course.groupset.create(genTestGroupSet())
+      return api.course.groupSet.create(genTestGroupSet())
         .then((groupSet) => {
           testGroupSetId = groupSet.id;
           // Create test group in the group sets
-          return api.course.groupset.createGroup(
+          return api.course.groupSet.createGroup(
             genTestGroupInGroupSet(testGroupSetId, 0)
           );
         })
         .then((group) => {
           // Get the group in the group set
-          return api.course.groupset.getGroup({
+          return api.course.groupSet.getGroup({
             groupId: group.id,
           });
         })
@@ -262,7 +262,7 @@ describe('Endpoints > Course > Group Sets', function () {
           }
 
           // Clean up: delete the group set
-          return api.course.groupset.delete({
+          return api.course.groupSet.delete({
             courseId,
             groupSetId: testGroupSetId,
           })
@@ -275,17 +275,17 @@ describe('Endpoints > Course > Group Sets', function () {
     it('Creates a group in a group set', function () {
       let testGroupSetId;
       // Create a group sets so we can create a group in it
-      return api.course.groupset.create(genTestGroupSet())
+      return api.course.groupSet.create(genTestGroupSet())
         .then((groupSet) => {
           testGroupSetId = groupSet.id;
           // Create test group in the group sets
-          return api.course.groupset.createGroup(
+          return api.course.groupSet.createGroup(
             genTestGroupInGroupSet(testGroupSetId, 0)
           );
         })
         .then((group) => {
           // Get the group in the group set
-          return api.course.groupset.getGroup({
+          return api.course.groupSet.getGroup({
             groupId: group.id,
           });
         })
@@ -301,7 +301,7 @@ describe('Endpoints > Course > Group Sets', function () {
           }
 
           // Clean up: delete the group set
-          return api.course.groupset.delete({
+          return api.course.groupSet.delete({
             courseId,
             groupSetId: testGroupSetId,
           })
@@ -314,17 +314,17 @@ describe('Endpoints > Course > Group Sets', function () {
     it('Deletes a group from a group set', function () {
       let testGroupSetId;
       // Create a group sets so we can create a group in it and delete the group
-      return api.course.groupset.create(genTestGroupSet())
+      return api.course.groupSet.create(genTestGroupSet())
         .then((groupSet) => {
           testGroupSetId = groupSet.id;
           // Create test group in the group sets
-          return api.course.groupset.createGroup(
+          return api.course.groupSet.createGroup(
             genTestGroupInGroupSet(testGroupSetId, 0)
           );
         })
         .then((group) => {
           // Delete the group from the group set
-          return api.course.groupset.deleteGroup({
+          return api.course.groupSet.deleteGroup({
             groupSetId: testGroupSetId,
             groupId: group.id,
           });
@@ -332,7 +332,7 @@ describe('Endpoints > Course > Group Sets', function () {
         .then(() => {
           // Pull the list of groups in the group set so we can make sure we
           // deleted the group
-          return api.course.groupset.listGroups({
+          return api.course.groupSet.listGroups({
             groupSetId: testGroupSetId,
           });
         })
@@ -344,7 +344,7 @@ describe('Endpoints > Course > Group Sets', function () {
           }
 
           // Clean up: delete the group set
-          return api.course.groupset.delete({
+          return api.course.groupSet.delete({
             courseId,
             groupSetId: testGroupSetId,
           })

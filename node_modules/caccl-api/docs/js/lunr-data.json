@@ -809,6 +809,18 @@
           "page#list",
           "promise.&lt;array.&lt;object&gt;&gt"
         ],
+        "api.course.page.html#get": [
+          "api.course.page#get",
+          "cours",
+          "course.page#get",
+          "function",
+          "info",
+          "option",
+          "page",
+          "page#get",
+          "promise.&lt;object&gt",
+          "specif"
+        ],
         "api.course.page.html#update": [
           "api.course.page#upd",
           "canva",
@@ -819,18 +831,6 @@
           "page#upd",
           "promise.&lt;object&gt",
           "updat"
-        ],
-        "api.course.page.html#create": [
-          "api.course.page#cr",
-          "cours",
-          "course.page#cr",
-          "creat",
-          "function",
-          "new",
-          "option",
-          "page",
-          "page#cr",
-          "promise.&lt;object&gt"
         ],
         "api.course.page.html#delete": [
           "api.course.page#delet",
@@ -843,17 +843,17 @@
           "page#delet",
           "promise.&lt;object&gt"
         ],
-        "api.course.page.html#get": [
-          "api.course.page#get",
+        "api.course.page.html#create": [
+          "api.course.page#cr",
           "cours",
-          "course.page#get",
+          "course.page#cr",
+          "creat",
           "function",
-          "info",
+          "new",
           "option",
           "page",
-          "page#get",
-          "promise.&lt;object&gt",
-          "specif"
+          "page#cr",
+          "promise.&lt;object&gt"
         ],
         "api.course.quiz.html": [
           "api.course.quiz",
@@ -970,6 +970,23 @@
           "question",
           "quiz",
           "quiz#createessayquest"
+        ],
+        "api.course.quiz.html#createShortAnswerQuestion": [
+          "add",
+          "answer",
+          "api.course.quiz#createshortanswerquest",
+          "cours",
+          "course.quiz#createshortanswerquest",
+          "creat",
+          "createshortanswerquest",
+          "function",
+          "new",
+          "option",
+          "promise.&lt;object&gt",
+          "question",
+          "quiz",
+          "quiz#createshortanswerquest",
+          "short"
         ],
         "api.course.quiz.html#listSubmissions": [
           "api.course.quiz#listsubmiss",
@@ -1294,6 +1311,31 @@
           "option",
           "promise.&lt;array.&lt;object&gt;&gt"
         ],
+        "api.other.html": [
+          "ad",
+          "api",
+          "api.oth",
+          "call",
+          "class",
+          "endpoint",
+          "function",
+          "list",
+          "support"
+        ],
+        "api.other.html#endpoint": [
+          "api.other#endpoint",
+          "current",
+          "endpoint",
+          "function",
+          "get",
+          "info",
+          "method",
+          "other#endpoint",
+          "param",
+          "path",
+          "promise.&lt;object&gt",
+          "user"
+        ],
         "api.user.self.html": [
           "api.user.self",
           "class",
@@ -1333,7 +1375,7 @@
           "user.self#listcours"
         ]
       },
-      "length": 99
+      "length": 102
     },
     "tokenStore": {
       "root": {
@@ -1387,6 +1429,10 @@
                 "index.html": {
                   "ref": "index.html",
                   "tf": 300
+                },
+                "api.other.html": {
+                  "ref": "api.other.html",
+                  "tf": 7.142857142857142
                 }
               },
               ".": {
@@ -2769,6 +2815,20 @@
                                             }
                                           }
                                         },
+                                        "g": {
+                                          "docs": {},
+                                          "e": {
+                                            "docs": {},
+                                            "t": {
+                                              "docs": {
+                                                "api.course.page.html#get": {
+                                                  "ref": "api.course.page.html#get",
+                                                  "tf": 1100
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
                                         "u": {
                                           "docs": {},
                                           "p": {
@@ -2779,17 +2839,6 @@
                                                   "ref": "api.course.page.html#update",
                                                   "tf": 1075
                                                 }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "c": {
-                                          "docs": {},
-                                          "r": {
-                                            "docs": {
-                                              "api.course.page.html#create": {
-                                                "ref": "api.course.page.html#create",
-                                                "tf": 1075
                                               }
                                             }
                                           }
@@ -2814,16 +2863,13 @@
                                             }
                                           }
                                         },
-                                        "g": {
+                                        "c": {
                                           "docs": {},
-                                          "e": {
-                                            "docs": {},
-                                            "t": {
-                                              "docs": {
-                                                "api.course.page.html#get": {
-                                                  "ref": "api.course.page.html#get",
-                                                  "tf": 1100
-                                                }
+                                          "r": {
+                                            "docs": {
+                                              "api.course.page.html#create": {
+                                                "ref": "api.course.page.html#create",
+                                                "tf": 1075
                                               }
                                             }
                                           }
@@ -3157,6 +3203,56 @@
                                                     },
                                                     "s": {
                                                       "docs": {},
+                                                      "h": {
+                                                        "docs": {},
+                                                        "o": {
+                                                          "docs": {},
+                                                          "r": {
+                                                            "docs": {},
+                                                            "t": {
+                                                              "docs": {},
+                                                              "a": {
+                                                                "docs": {},
+                                                                "n": {
+                                                                  "docs": {},
+                                                                  "s": {
+                                                                    "docs": {},
+                                                                    "w": {
+                                                                      "docs": {},
+                                                                      "e": {
+                                                                        "docs": {},
+                                                                        "r": {
+                                                                          "docs": {},
+                                                                          "q": {
+                                                                            "docs": {},
+                                                                            "u": {
+                                                                              "docs": {},
+                                                                              "e": {
+                                                                                "docs": {},
+                                                                                "s": {
+                                                                                  "docs": {},
+                                                                                  "t": {
+                                                                                    "docs": {
+                                                                                      "api.course.quiz.html#createShortAnswerQuestion": {
+                                                                                        "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                                                                                        "tf": 1075
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
                                                       "u": {
                                                         "docs": {},
                                                         "b": {
@@ -3740,6 +3836,58 @@
                     }
                   }
                 },
+                "o": {
+                  "docs": {},
+                  "t": {
+                    "docs": {},
+                    "h": {
+                      "docs": {
+                        "api.other.html": {
+                          "ref": "api.other.html",
+                          "tf": 1300
+                        }
+                      },
+                      "e": {
+                        "docs": {},
+                        "r": {
+                          "docs": {},
+                          "#": {
+                            "docs": {},
+                            "e": {
+                              "docs": {},
+                              "n": {
+                                "docs": {},
+                                "d": {
+                                  "docs": {},
+                                  "p": {
+                                    "docs": {},
+                                    "o": {
+                                      "docs": {},
+                                      "i": {
+                                        "docs": {},
+                                        "n": {
+                                          "docs": {},
+                                          "t": {
+                                            "docs": {
+                                              "api.other.html#endpoint": {
+                                                "ref": "api.other.html#endpoint",
+                                                "tf": 1100
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
                 "u": {
                   "docs": {},
                   "s": {
@@ -4015,7 +4163,12 @@
             }
           },
           "d": {
-            "docs": {},
+            "docs": {
+              "api.other.html": {
+                "ref": "api.other.html",
+                "tf": 7.142857142857142
+              }
+            },
             "d": {
               "docs": {
                 "api.course.app.html#add": {
@@ -4033,6 +4186,10 @@
                 "api.course.quiz.html#createEssayQuestion": {
                   "ref": "api.course.quiz.html#createEssayQuestion",
                   "tf": 7.142857142857142
+                },
+                "api.course.quiz.html#createShortAnswerQuestion": {
+                  "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                  "tf": 6.25
                 },
                 "api.course.rubric.html#createFreeFormGradingRubricInAssignment": {
                   "ref": "api.course.rubric.html#createFreeFormGradingRubricInAssignment",
@@ -4845,6 +5002,23 @@
                   }
                 }
               }
+            },
+            "s": {
+              "docs": {},
+              "w": {
+                "docs": {},
+                "e": {
+                  "docs": {},
+                  "r": {
+                    "docs": {
+                      "api.course.quiz.html#createShortAnswerQuestion": {
+                        "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                        "tf": 6.25
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "l": {
@@ -4985,6 +5159,10 @@
                   "api.course.app.html#updateMetadata": {
                     "ref": "api.course.app.html#updateMetadata",
                     "tf": 1.3157894736842104
+                  },
+                  "api.other.html": {
+                    "ref": "api.other.html",
+                    "tf": 7.142857142857142
                   }
                 }
               }
@@ -5048,6 +5226,10 @@
                     },
                     "api.course.html": {
                       "ref": "api.course.html",
+                      "tf": 110
+                    },
+                    "api.other.html": {
+                      "ref": "api.other.html",
                       "tf": 110
                     },
                     "api.user.self.html": {
@@ -5191,16 +5373,16 @@
                       "ref": "api.course.page.html#list",
                       "tf": 12.5
                     },
-                    "api.course.page.html#create": {
-                      "ref": "api.course.page.html#create",
+                    "api.course.page.html#get": {
+                      "ref": "api.course.page.html#get",
                       "tf": 12.5
                     },
                     "api.course.page.html#delete": {
                       "ref": "api.course.page.html#delete",
                       "tf": 16.666666666666664
                     },
-                    "api.course.page.html#get": {
-                      "ref": "api.course.page.html#get",
+                    "api.course.page.html#create": {
+                      "ref": "api.course.page.html#create",
                       "tf": 12.5
                     },
                     "api.course.quiz.html": {
@@ -5238,6 +5420,10 @@
                     "api.course.quiz.html#createEssayQuestion": {
                       "ref": "api.course.quiz.html#createEssayQuestion",
                       "tf": 7.142857142857142
+                    },
+                    "api.course.quiz.html#createShortAnswerQuestion": {
+                      "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                      "tf": 6.25
                     },
                     "api.course.quiz.html#listSubmissions": {
                       "ref": "api.course.quiz.html#listSubmissions",
@@ -6677,6 +6863,20 @@
                                     }
                                   }
                                 },
+                                "g": {
+                                  "docs": {},
+                                  "e": {
+                                    "docs": {},
+                                    "t": {
+                                      "docs": {
+                                        "api.course.page.html#get": {
+                                          "ref": "api.course.page.html#get",
+                                          "tf": 100
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
                                 "u": {
                                   "docs": {},
                                   "p": {
@@ -6687,17 +6887,6 @@
                                           "ref": "api.course.page.html#update",
                                           "tf": 75
                                         }
-                                      }
-                                    }
-                                  }
-                                },
-                                "c": {
-                                  "docs": {},
-                                  "r": {
-                                    "docs": {
-                                      "api.course.page.html#create": {
-                                        "ref": "api.course.page.html#create",
-                                        "tf": 75
                                       }
                                     }
                                   }
@@ -6722,16 +6911,13 @@
                                     }
                                   }
                                 },
-                                "g": {
+                                "c": {
                                   "docs": {},
-                                  "e": {
-                                    "docs": {},
-                                    "t": {
-                                      "docs": {
-                                        "api.course.page.html#get": {
-                                          "ref": "api.course.page.html#get",
-                                          "tf": 100
-                                        }
+                                  "r": {
+                                    "docs": {
+                                      "api.course.page.html#create": {
+                                        "ref": "api.course.page.html#create",
+                                        "tf": 75
                                       }
                                     }
                                   }
@@ -7065,6 +7251,56 @@
                                             },
                                             "s": {
                                               "docs": {},
+                                              "h": {
+                                                "docs": {},
+                                                "o": {
+                                                  "docs": {},
+                                                  "r": {
+                                                    "docs": {},
+                                                    "t": {
+                                                      "docs": {},
+                                                      "a": {
+                                                        "docs": {},
+                                                        "n": {
+                                                          "docs": {},
+                                                          "s": {
+                                                            "docs": {},
+                                                            "w": {
+                                                              "docs": {},
+                                                              "e": {
+                                                                "docs": {},
+                                                                "r": {
+                                                                  "docs": {},
+                                                                  "q": {
+                                                                    "docs": {},
+                                                                    "u": {
+                                                                      "docs": {},
+                                                                      "e": {
+                                                                        "docs": {},
+                                                                        "s": {
+                                                                          "docs": {},
+                                                                          "t": {
+                                                                            "docs": {
+                                                                              "api.course.quiz.html#createShortAnswerQuestion": {
+                                                                                "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                                                                                "tf": 75
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
                                               "u": {
                                                 "docs": {},
                                                 "b": {
@@ -7777,6 +8013,10 @@
                           "ref": "api.course.quiz.html#createSubmission",
                           "tf": 5.555555555555555
                         },
+                        "api.other.html#endpoint": {
+                          "ref": "api.other.html#endpoint",
+                          "tf": 12.5
+                        },
                         "api.user.self.html": {
                           "ref": "api.user.self.html",
                           "tf": 10
@@ -7856,6 +8096,10 @@
                       "ref": "api.course.quiz.html#createEssayQuestion",
                       "tf": 7.142857142857142
                     },
+                    "api.course.quiz.html#createShortAnswerQuestion": {
+                      "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                      "tf": 6.25
+                    },
                     "api.course.quiz.html#createSubmission": {
                       "ref": "api.course.quiz.html#createSubmission",
                       "tf": 5.555555555555555
@@ -7901,6 +8145,56 @@
                                                 "api.course.assignment.html#createSubmissionComment": {
                                                   "ref": "api.course.assignment.html#createSubmissionComment",
                                                   "tf": 608.3333333333334
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "h": {
+                        "docs": {},
+                        "o": {
+                          "docs": {},
+                          "r": {
+                            "docs": {},
+                            "t": {
+                              "docs": {},
+                              "a": {
+                                "docs": {},
+                                "n": {
+                                  "docs": {},
+                                  "s": {
+                                    "docs": {},
+                                    "w": {
+                                      "docs": {},
+                                      "e": {
+                                        "docs": {},
+                                        "r": {
+                                          "docs": {},
+                                          "q": {
+                                            "docs": {},
+                                            "u": {
+                                              "docs": {},
+                                              "e": {
+                                                "docs": {},
+                                                "s": {
+                                                  "docs": {},
+                                                  "t": {
+                                                    "docs": {
+                                                      "api.course.quiz.html#createShortAnswerQuestion": {
+                                                        "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                                                        "tf": 608.3333333333334
+                                                      }
+                                                    }
+                                                  }
                                                 }
                                               }
                                             }
@@ -8499,6 +8793,14 @@
                           "api.course.gradebookColumn.html#get": {
                             "ref": "api.course.gradebookColumn.html#get",
                             "tf": 3.3333333333333335
+                          },
+                          "api.other.html": {
+                            "ref": "api.other.html",
+                            "tf": 7.142857142857142
+                          },
+                          "api.other.html#endpoint": {
+                            "ref": "api.other.html#endpoint",
+                            "tf": 620
                           }
                         }
                       }
@@ -8874,6 +9176,10 @@
                   },
                   "api.course.html#listUsers": {
                     "ref": "api.course.html#listUsers",
+                    "tf": 12.5
+                  },
+                  "api.other.html#endpoint": {
+                    "ref": "api.other.html#endpoint",
                     "tf": 12.5
                   },
                   "api.user.self.html": {
@@ -9531,6 +9837,20 @@
                   }
                 }
               }
+            },
+            "o": {
+              "docs": {},
+              "r": {
+                "docs": {},
+                "t": {
+                  "docs": {
+                    "api.course.quiz.html#createShortAnswerQuestion": {
+                      "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                      "tf": 6.25
+                    }
+                  }
+                }
+              }
             }
           },
           "p": {
@@ -9751,6 +10071,10 @@
                         "api.course.assignment.html#updateGrades": {
                           "ref": "api.course.assignment.html#updateGrades",
                           "tf": 5.555555555555555
+                        },
+                        "api.other.html": {
+                          "ref": "api.other.html",
+                          "tf": 7.142857142857142
                         }
                       }
                     }
@@ -9932,6 +10256,10 @@
                 },
                 "api.course.html#listObservers": {
                   "ref": "api.course.html#listObservers",
+                  "tf": 12.5
+                },
+                "api.other.html#endpoint": {
+                  "ref": "api.other.html#endpoint",
                   "tf": 12.5
                 },
                 "api.user.self.html": {
@@ -10926,6 +11254,10 @@
                     "ref": "api.course.html#listObservers",
                     "tf": 12.5
                   },
+                  "api.other.html": {
+                    "ref": "api.other.html",
+                    "tf": 7.142857142857142
+                  },
                   "api.user.self.html#listCourses": {
                     "ref": "api.user.self.html#listCourses",
                     "tf": 8.333333333333332
@@ -11739,21 +12071,21 @@
                         "ref": "api.course.page.html#list",
                         "tf": 33.33333333333333
                       },
+                      "api.course.page.html#get": {
+                        "ref": "api.course.page.html#get",
+                        "tf": 50
+                      },
                       "api.course.page.html#update": {
                         "ref": "api.course.page.html#update",
-                        "tf": 33.33333333333333
-                      },
-                      "api.course.page.html#create": {
-                        "ref": "api.course.page.html#create",
                         "tf": 33.33333333333333
                       },
                       "api.course.page.html#delete": {
                         "ref": "api.course.page.html#delete",
                         "tf": 33.33333333333333
                       },
-                      "api.course.page.html#get": {
-                        "ref": "api.course.page.html#get",
-                        "tf": 50
+                      "api.course.page.html#create": {
+                        "ref": "api.course.page.html#create",
+                        "tf": 33.33333333333333
                       },
                       "api.course.quiz.html#list": {
                         "ref": "api.course.quiz.html#list",
@@ -11785,6 +12117,10 @@
                       },
                       "api.course.quiz.html#createEssayQuestion": {
                         "ref": "api.course.quiz.html#createEssayQuestion",
+                        "tf": 33.33333333333333
+                      },
+                      "api.course.quiz.html#createShortAnswerQuestion": {
+                        "ref": "api.course.quiz.html#createShortAnswerQuestion",
                         "tf": 33.33333333333333
                       },
                       "api.course.quiz.html#listSubmissions": {
@@ -11925,6 +12261,50 @@
               "api.course.gradebookColumn.html#get": {
                 "ref": "api.course.gradebookColumn.html#get",
                 "tf": 3.3333333333333335
+              }
+            }
+          },
+          "t": {
+            "docs": {},
+            "h": {
+              "docs": {},
+              "e": {
+                "docs": {},
+                "r": {
+                  "docs": {},
+                  "#": {
+                    "docs": {},
+                    "e": {
+                      "docs": {},
+                      "n": {
+                        "docs": {},
+                        "d": {
+                          "docs": {},
+                          "p": {
+                            "docs": {},
+                            "o": {
+                              "docs": {},
+                              "i": {
+                                "docs": {},
+                                "n": {
+                                  "docs": {},
+                                  "t": {
+                                    "docs": {
+                                      "api.other.html#endpoint": {
+                                        "ref": "api.other.html#endpoint",
+                                        "tf": 100
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -12165,20 +12545,20 @@
                             "ref": "api.course.page.html#list",
                             "tf": 110
                           },
-                          "api.course.page.html#update": {
-                            "ref": "api.course.page.html#update",
+                          "api.course.page.html#get": {
+                            "ref": "api.course.page.html#get",
                             "tf": 110
                           },
-                          "api.course.page.html#create": {
-                            "ref": "api.course.page.html#create",
+                          "api.course.page.html#update": {
+                            "ref": "api.course.page.html#update",
                             "tf": 110
                           },
                           "api.course.page.html#delete": {
                             "ref": "api.course.page.html#delete",
                             "tf": 110
                           },
-                          "api.course.page.html#get": {
-                            "ref": "api.course.page.html#get",
+                          "api.course.page.html#create": {
+                            "ref": "api.course.page.html#create",
                             "tf": 110
                           },
                           "api.course.quiz.html": {
@@ -12215,6 +12595,10 @@
                           },
                           "api.course.quiz.html#createEssayQuestion": {
                             "ref": "api.course.quiz.html#createEssayQuestion",
+                            "tf": 110
+                          },
+                          "api.course.quiz.html#createShortAnswerQuestion": {
+                            "ref": "api.course.quiz.html#createShortAnswerQuestion",
                             "tf": 110
                           },
                           "api.course.quiz.html#listSubmissions": {
@@ -12315,6 +12699,14 @@
                           },
                           "api.course.html#listObservers": {
                             "ref": "api.course.html#listObservers",
+                            "tf": 110
+                          },
+                          "api.other.html": {
+                            "ref": "api.other.html",
+                            "tf": 7.142857142857142
+                          },
+                          "api.other.html#endpoint": {
+                            "ref": "api.other.html#endpoint",
                             "tf": 110
                           },
                           "api.user.self.html": {
@@ -12828,21 +13220,21 @@
                                                       "ref": "api.course.groupSet.html#deleteGroup",
                                                       "tf": 33.33333333333333
                                                     },
+                                                    "api.course.page.html#get": {
+                                                      "ref": "api.course.page.html#get",
+                                                      "tf": 50
+                                                    },
                                                     "api.course.page.html#update": {
                                                       "ref": "api.course.page.html#update",
-                                                      "tf": 33.33333333333333
-                                                    },
-                                                    "api.course.page.html#create": {
-                                                      "ref": "api.course.page.html#create",
                                                       "tf": 33.33333333333333
                                                     },
                                                     "api.course.page.html#delete": {
                                                       "ref": "api.course.page.html#delete",
                                                       "tf": 33.33333333333333
                                                     },
-                                                    "api.course.page.html#get": {
-                                                      "ref": "api.course.page.html#get",
-                                                      "tf": 50
+                                                    "api.course.page.html#create": {
+                                                      "ref": "api.course.page.html#create",
+                                                      "tf": 33.33333333333333
                                                     },
                                                     "api.course.quiz.html#get": {
                                                       "ref": "api.course.quiz.html#get",
@@ -12866,6 +13258,10 @@
                                                     },
                                                     "api.course.quiz.html#createEssayQuestion": {
                                                       "ref": "api.course.quiz.html#createEssayQuestion",
+                                                      "tf": 33.33333333333333
+                                                    },
+                                                    "api.course.quiz.html#createShortAnswerQuestion": {
+                                                      "ref": "api.course.quiz.html#createShortAnswerQuestion",
                                                       "tf": 33.33333333333333
                                                     },
                                                     "api.course.quiz.html#getSubmission": {
@@ -12895,6 +13291,10 @@
                                                     "api.course.html#getUser": {
                                                       "ref": "api.course.html#getUser",
                                                       "tf": 33.33333333333333
+                                                    },
+                                                    "api.other.html#endpoint": {
+                                                      "ref": "api.other.html#endpoint",
+                                                      "tf": 20
                                                     },
                                                     "api.user.self.html#getProfile": {
                                                       "ref": "api.user.self.html#getProfile",
@@ -12932,7 +13332,12 @@
               "a": {
                 "docs": {},
                 "m": {
-                  "docs": {},
+                  "docs": {
+                    "api.other.html#endpoint": {
+                      "ref": "api.other.html#endpoint",
+                      "tf": 20
+                    }
+                  },
                   "e": {
                     "docs": {},
                     "t": {
@@ -12963,20 +13368,20 @@
                     "ref": "api.course.page.html#list",
                     "tf": 12.5
                   },
+                  "api.course.page.html#get": {
+                    "ref": "api.course.page.html#get",
+                    "tf": 12.5
+                  },
                   "api.course.page.html#update": {
                     "ref": "api.course.page.html#update",
                     "tf": 16.666666666666664
-                  },
-                  "api.course.page.html#create": {
-                    "ref": "api.course.page.html#create",
-                    "tf": 12.5
                   },
                   "api.course.page.html#delete": {
                     "ref": "api.course.page.html#delete",
                     "tf": 16.666666666666664
                   },
-                  "api.course.page.html#get": {
-                    "ref": "api.course.page.html#get",
+                  "api.course.page.html#create": {
+                    "ref": "api.course.page.html#create",
                     "tf": 12.5
                   }
                 },
@@ -12999,6 +13404,20 @@
                       }
                     }
                   },
+                  "g": {
+                    "docs": {},
+                    "e": {
+                      "docs": {},
+                      "t": {
+                        "docs": {
+                          "api.course.page.html#get": {
+                            "ref": "api.course.page.html#get",
+                            "tf": 100
+                          }
+                        }
+                      }
+                    }
+                  },
                   "u": {
                     "docs": {},
                     "p": {
@@ -13009,17 +13428,6 @@
                             "ref": "api.course.page.html#update",
                             "tf": 75
                           }
-                        }
-                      }
-                    }
-                  },
-                  "c": {
-                    "docs": {},
-                    "r": {
-                      "docs": {
-                        "api.course.page.html#create": {
-                          "ref": "api.course.page.html#create",
-                          "tf": 75
                         }
                       }
                     }
@@ -13044,19 +13452,27 @@
                       }
                     }
                   },
-                  "g": {
+                  "c": {
                     "docs": {},
-                    "e": {
-                      "docs": {},
-                      "t": {
-                        "docs": {
-                          "api.course.page.html#get": {
-                            "ref": "api.course.page.html#get",
-                            "tf": 100
-                          }
+                    "r": {
+                      "docs": {
+                        "api.course.page.html#create": {
+                          "ref": "api.course.page.html#create",
+                          "tf": 75
                         }
                       }
                     }
+                  }
+                }
+              }
+            },
+            "t": {
+              "docs": {},
+              "h": {
+                "docs": {
+                  "api.other.html#endpoint": {
+                    "ref": "api.other.html#endpoint",
+                    "tf": 20
                   }
                 }
               }
@@ -13188,6 +13604,20 @@
                     }
                   }
                 }
+              },
+              "h": {
+                "docs": {},
+                "o": {
+                  "docs": {},
+                  "d": {
+                    "docs": {
+                      "api.other.html#endpoint": {
+                        "ref": "api.other.html#endpoint",
+                        "tf": 20
+                      }
+                    }
+                  }
+                }
               }
             },
             "m": {
@@ -13288,6 +13718,10 @@
                   "ref": "api.course.quiz.html#createEssayQuestion",
                   "tf": 7.142857142857142
                 },
+                "api.course.quiz.html#createShortAnswerQuestion": {
+                  "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                  "tf": 6.25
+                },
                 "api.course.quiz.html#createSubmission": {
                   "ref": "api.course.quiz.html#createSubmission",
                   "tf": 5.555555555555555
@@ -13339,6 +13773,10 @@
                   },
                   "api.course.html#listUsers": {
                     "ref": "api.course.html#listUsers",
+                    "tf": 12.5
+                  },
+                  "api.other.html#endpoint": {
+                    "ref": "api.other.html#endpoint",
                     "tf": 12.5
                   },
                   "api.user.self.html": {
@@ -13665,6 +14103,10 @@
                   "api.course.quiz.html#createEssayQuestion": {
                     "ref": "api.course.quiz.html#createEssayQuestion",
                     "tf": 7.142857142857142
+                  },
+                  "api.course.quiz.html#createShortAnswerQuestion": {
+                    "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                    "tf": 6.25
                   },
                   "api.course.quiz.html#listSubmissions": {
                     "ref": "api.course.quiz.html#listSubmissions",
@@ -14010,6 +14452,56 @@
                               },
                               "s": {
                                 "docs": {},
+                                "h": {
+                                  "docs": {},
+                                  "o": {
+                                    "docs": {},
+                                    "r": {
+                                      "docs": {},
+                                      "t": {
+                                        "docs": {},
+                                        "a": {
+                                          "docs": {},
+                                          "n": {
+                                            "docs": {},
+                                            "s": {
+                                              "docs": {},
+                                              "w": {
+                                                "docs": {},
+                                                "e": {
+                                                  "docs": {},
+                                                  "r": {
+                                                    "docs": {},
+                                                    "q": {
+                                                      "docs": {},
+                                                      "u": {
+                                                        "docs": {},
+                                                        "e": {
+                                                          "docs": {},
+                                                          "s": {
+                                                            "docs": {},
+                                                            "t": {
+                                                              "docs": {
+                                                                "api.course.quiz.html#createShortAnswerQuestion": {
+                                                                  "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                                                                  "tf": 75
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
                                 "u": {
                                   "docs": {},
                                   "b": {
@@ -14087,6 +14579,10 @@
                             "ref": "api.course.quiz.html#createEssayQuestion",
                             "tf": 7.142857142857142
                           },
+                          "api.course.quiz.html#createShortAnswerQuestion": {
+                            "ref": "api.course.quiz.html#createShortAnswerQuestion",
+                            "tf": 6.25
+                          },
                           "api.course.quiz.html#listQuestionGrades": {
                             "ref": "api.course.quiz.html#listQuestionGrades",
                             "tf": 7.142857142857142
@@ -14105,14 +14601,16 @@
           }
         }
       },
-      "length": 1104
+      "length": 1140
     },
     "corpusTokens": [
       "account",
       "actual",
+      "ad",
       "add",
       "alia",
       "and/or",
+      "answer",
       "api",
       "api.account",
       "api.cours",
@@ -14190,6 +14688,7 @@
       "api.course.quiz#cr",
       "api.course.quiz#createessayquest",
       "api.course.quiz#createmultiplechoicequest",
+      "api.course.quiz#createshortanswerquest",
       "api.course.quiz#createsubmiss",
       "api.course.quiz#delet",
       "api.course.quiz#get",
@@ -14207,6 +14706,8 @@
       "api.course.sect",
       "api.course.section#get",
       "api.course.section#list",
+      "api.oth",
+      "api.other#endpoint",
       "api.user.self",
       "api.user.self#getprofil",
       "api.user.self#listcours",
@@ -14328,6 +14829,7 @@
       "course.quiz#cr",
       "course.quiz#createessayquest",
       "course.quiz#createmultiplechoicequest",
+      "course.quiz#createshortanswerquest",
       "course.quiz#createsubmiss",
       "course.quiz#delet",
       "course.quiz#get",
@@ -14352,6 +14854,7 @@
       "creategroup",
       "createmultiplechoicequest",
       "createoverrid",
+      "createshortanswerquest",
       "createsubmiss",
       "createsubmissioncom",
       "createtextsubmiss",
@@ -14451,6 +14954,7 @@
       "member",
       "metadata",
       "metadataid",
+      "method",
       "multipl",
       "new",
       "note",
@@ -14458,6 +14962,7 @@
       "observ",
       "on",
       "option",
+      "other#endpoint",
       "overrid",
       "page",
       "page#cr",
@@ -14465,7 +14970,9 @@
       "page#get",
       "page#list",
       "page#upd",
+      "param",
       "paramet",
+      "path",
       "promise.&lt;array.&lt;object&gt;&gt",
       "promise.&lt;object&gt",
       "pull",
@@ -14474,6 +14981,7 @@
       "quiz#creat",
       "quiz#createessayquest",
       "quiz#createmultiplechoicequest",
+      "quiz#createshortanswerquest",
       "quiz#createsubmiss",
       "quiz#delet",
       "quiz#get",
@@ -14504,6 +15012,7 @@
       "set",
       "sets/categori",
       "share",
+      "short",
       "simul",
       "singl",
       "smart",
@@ -15128,6 +15637,16 @@
       "summary": "",
       "description": "Gets the list of pages in a course"
     },
+    "api.course.page.html#get": {
+      "id": "api.course.page.html#get",
+      "kind": "function",
+      "title": "get( options ) → {Promise.&lt;Object&gt;}",
+      "longname": "api.course.page#get",
+      "name": "get",
+      "tags": "api.course.page#get course.page#get page#get get",
+      "summary": "",
+      "description": "Get info on a specific page in a course"
+    },
     "api.course.page.html#update": {
       "id": "api.course.page.html#update",
       "kind": "function",
@@ -15137,16 +15656,6 @@
       "tags": "api.course.page#update course.page#update page#update update",
       "summary": "",
       "description": "Updates a Canvas page"
-    },
-    "api.course.page.html#create": {
-      "id": "api.course.page.html#create",
-      "kind": "function",
-      "title": "create( options ) → {Promise.&lt;Object&gt;}",
-      "longname": "api.course.page#create",
-      "name": "create",
-      "tags": "api.course.page#create course.page#create page#create create",
-      "summary": "",
-      "description": "Creates a new page in a course"
     },
     "api.course.page.html#delete": {
       "id": "api.course.page.html#delete",
@@ -15158,15 +15667,15 @@
       "summary": "",
       "description": "Deletes a page from a course"
     },
-    "api.course.page.html#get": {
-      "id": "api.course.page.html#get",
+    "api.course.page.html#create": {
+      "id": "api.course.page.html#create",
       "kind": "function",
-      "title": "get( options ) → {Promise.&lt;Object&gt;}",
-      "longname": "api.course.page#get",
-      "name": "get",
-      "tags": "api.course.page#get course.page#get page#get get",
+      "title": "create( options ) → {Promise.&lt;Object&gt;}",
+      "longname": "api.course.page#create",
+      "name": "create",
+      "tags": "api.course.page#create course.page#create page#create create",
       "summary": "",
-      "description": "Get info on a specific page in a course"
+      "description": "Creates a new page in a course"
     },
     "api.course.quiz.html": {
       "id": "api.course.quiz.html",
@@ -15258,6 +15767,16 @@
       "tags": "api.course.quiz#createEssayQuestion course.quiz#createEssayQuestion quiz#createEssayQuestion createEssayQuestion",
       "summary": "",
       "description": "Creates a new essay question and adds it to a quiz in a course"
+    },
+    "api.course.quiz.html#createShortAnswerQuestion": {
+      "id": "api.course.quiz.html#createShortAnswerQuestion",
+      "kind": "function",
+      "title": "createShortAnswerQuestion( options ) → {Promise.&lt;Object&gt;}",
+      "longname": "api.course.quiz#createShortAnswerQuestion",
+      "name": "createShortAnswerQuestion",
+      "tags": "api.course.quiz#createShortAnswerQuestion course.quiz#createShortAnswerQuestion quiz#createShortAnswerQuestion createShortAnswerQuestion",
+      "summary": "",
+      "description": "Creates a new short answer question and adds it to a quiz in a course"
     },
     "api.course.quiz.html#listSubmissions": {
       "id": "api.course.quiz.html#listSubmissions",
@@ -15511,6 +16030,27 @@
       "tags": "api.course#listObservers course#listObservers listObservers",
       "summary": "",
       "description": "Gets the list of observers in a course"
+    },
+    "api.other.html": {
+      "id": "api.other.html",
+      "kind": "class",
+      "title": "other",
+      "longname": "api.other",
+      "name": "other",
+      "tags": "api.other other",
+      "summary": "",
+      "description": "Functions for calling other endpoints not added to our support list of APIs",
+      "body": ""
+    },
+    "api.other.html#endpoint": {
+      "id": "api.other.html#endpoint",
+      "kind": "function",
+      "title": "endpoint( path [, method [, params ] ] ) → {Promise.&lt;Object&gt;}",
+      "longname": "api.other#endpoint",
+      "name": "endpoint",
+      "tags": "api.other#endpoint other#endpoint endpoint",
+      "summary": "",
+      "description": "Gets info on the current user"
     },
     "api.user.self.html": {
       "id": "api.user.self.html",

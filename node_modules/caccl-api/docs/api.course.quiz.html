@@ -49,6 +49,7 @@
 											<li><a href="api.course.quiz.html">api.course.quiz</a></li>
 											<li><a href="api.course.rubric.html">api.course.rubric</a></li>
 											<li><a href="api.course.section.html">api.course.section</a></li>
+											<li><a href="api.other.html">api.other</a></li>
 											<li><a href="api.user.self.html">api.user.self</a></li>
 									</ul>
 								</li>
@@ -303,7 +304,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-52">line 52</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-53">line 53</a></p>
 								</div>
 							</div>
 			
@@ -368,11 +369,11 @@
 												<tr>
 														<td><code>suppressNotification</code></td>
 													<td><span class="param-type">boolean</span></td>
-														<td class="attributes"></td>
-														<td></td>
+														<td class="attributes">&lt;optional&gt;<br/></td>
+														<td>false</td>
 													<td class="last">
-															If true, does not notify
-									  users that the quiz has been updated
+															If true, does not
+									  notify users that the quiz has been updated
 													</td>
 												</tr>
 												<tr>
@@ -651,7 +652,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-72">line 72</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-74">line 74</a></p>
 								</div>
 							</div>
 			
@@ -979,7 +980,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-203">line 203</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-206">line 206</a></p>
 								</div>
 							</div>
 			
@@ -1078,7 +1079,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-326">line 326</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-330">line 330</a></p>
 								</div>
 							</div>
 			
@@ -1177,7 +1178,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-361">line 361</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-366">line 366</a></p>
 								</div>
 							</div>
 			
@@ -1360,7 +1361,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-381">line 381</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-387">line 387</a></p>
 								</div>
 							</div>
 			
@@ -1533,7 +1534,180 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-441">line 441</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-455">line 455</a></p>
+								</div>
+							</div>
+			
+			
+			
+			
+					</form>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public collapsible-symbol">
+			<h4 id="createShortAnswerQuestion" class="function public"><span class="name">createShortAnswerQuestion</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"> &rarr;&nbsp;{Promise.&lt;Object>}</span></h4>
+		</dt>
+<dd class="symbol-details function public  collapsible-symbol">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description">Creates a new short answer question and adds it to a quiz in a course</div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>options</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									object containing all arguments
+										<table class="params table table-striped">
+											<thead>
+											<tr>
+													<th>Name</th>
+												<th>Type</th>
+													<th>Attributes</th>
+													<th>Default</th>
+												<th class="last">Description</th>
+											</tr>
+											</thead>
+											<tbody>
+												<tr>
+														<td><code>courseId</code></td>
+													<td><span class="param-type">number</span></td>
+														<td class="attributes"></td>
+														<td></td>
+													<td class="last">
+															Canvas course Id to query
+													</td>
+												</tr>
+												<tr>
+														<td><code>quizId</code></td>
+													<td><span class="param-type">number</span></td>
+														<td class="attributes"></td>
+														<td></td>
+													<td class="last">
+															Canvas quiz Id (not the quiz's assignment
+									  Id)
+													</td>
+												</tr>
+												<tr>
+														<td><code>name</code></td>
+													<td><span class="param-type">string</span></td>
+														<td class="attributes"></td>
+														<td></td>
+													<td class="last">
+															Name of the question
+													</td>
+												</tr>
+												<tr>
+														<td><code>text</code></td>
+													<td><span class="param-type">string</span></td>
+														<td class="attributes"></td>
+														<td></td>
+													<td class="last">
+															The text of the question, as displayed to the
+									  quiz taker
+													</td>
+												</tr>
+												<tr>
+														<td><code>pointsPossible</code></td>
+													<td><span class="param-type">number</span></td>
+														<td class="attributes"></td>
+														<td></td>
+													<td class="last">
+															Maximum number of points
+													</td>
+												</tr>
+												<tr>
+														<td><code>position</code></td>
+													<td><span class="param-type">number</span></td>
+														<td class="attributes">&lt;optional&gt;<br/></td>
+														<td>last</td>
+													<td class="last">
+															Optional. Position of the question
+									  with respect to the other questions in the quiz
+													</td>
+												</tr>
+												<tr>
+														<td><code>correctComment</code></td>
+													<td><span class="param-type">string</span></td>
+														<td class="attributes">&lt;optional&gt;<br/></td>
+														<td></td>
+													<td class="last">
+															Comment to display if the
+									  student answers correctly
+													</td>
+												</tr>
+												<tr>
+														<td><code>incorrectComment</code></td>
+													<td><span class="param-type">string</span></td>
+														<td class="attributes">&lt;optional&gt;<br/></td>
+														<td></td>
+													<td class="last">
+															Comment to display if the
+									  student answers incorrectly
+													</td>
+												</tr>
+												<tr>
+														<td><code>neutralComment</code></td>
+													<td><span class="param-type">string</span></td>
+														<td class="attributes">&lt;optional&gt;<br/></td>
+														<td></td>
+													<td class="last">
+															Comment to display regardless
+									  of how the student answers
+													</td>
+												</tr>
+											</tbody>
+										</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="callout callout-success"><h5>Returns</h5>		<form class="form-horizontal returns">
+							<div class="form-group">
+								<label class="col-sm-3 control-label returns-type"><span class="param-type">Promise.&lt;Object></span></label>
+								<div class="col-sm-9">
+									<div class="form-control-static returns-description">Canvas QuizQuestion <a href="https://canvas.instructure.com/doc/api/quiz_questions.html#QuizQuestion">https://canvas.instructure.com/doc/api/quiz_questions.html#QuizQuestion</a></div>
+								</div>
+							</div>
+					</form>
+			</div>			<div class="callout callout-default"><h5>Details</h5>		<form class="form-horizontal details">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+							<!-- author -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Author</label>
+								<div class="col-sm-9">
+										<p class="form-control-static">Gabriel Abrams</p>
+								</div>
+							</div>
+			
+			
+			
+							<!-- source -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Source</label>
+								<div class="col-sm-9">
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-510">line 510</a></p>
 								</div>
 							</div>
 			
@@ -1632,7 +1806,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-493">line 493</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-569">line 569</a></p>
 								</div>
 							</div>
 			
@@ -1738,7 +1912,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-516">line 516</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-593">line 593</a></p>
 								</div>
 							</div>
 			
@@ -1860,7 +2034,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-540">line 540</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-622">line 622</a></p>
 								</div>
 							</div>
 			
@@ -1959,7 +2133,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-636">line 636</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-723">line 723</a></p>
 								</div>
 							</div>
 			
@@ -2110,7 +2284,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Source</label>
 								<div class="col-sm-9">
-									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-815">line 815</a></p>
+									<p class="form-control-static"><a href="Course_Quiz.js.html">Course/Quiz.js</a>, <a href="Course_Quiz.js.html#line-903">line 903</a></p>
 								</div>
 							</div>
 			
